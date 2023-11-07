@@ -30,3 +30,13 @@
     opacity: 0.1;
     background-color: rgba(0, 0, 0, 0.0.1);
 }
+
+.footer-text img {
+    max-width: 290px;
+}
+
+.footer-text p {
+    margin-bottom: 0;
+    padding: 1rem 0 1.2rem;
+}
+

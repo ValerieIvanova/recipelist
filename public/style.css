@@ -25,11 +25,7 @@ h3,
 h4,
 h5,
 body,
-p,
-.topbar-section,
-.navbar-inverse .navbar-nav .nav-link,
-.header .dropdown-menu,
-.navbar-nav .nav-link {
+p {
     font-family: 'Roboto', serif;
 }
 
@@ -310,7 +306,7 @@ a {
 /* FOOTER
 **************************************/
 
-
+/* 
 .footer.wb {
     background-color: #ffffff;
 }
@@ -369,7 +365,7 @@ a {
 .demos .blog-meta h4 {
     font-size: 28px;
     padding: 0 0 1rem;
-}
+} */
 
 
 
@@ -1107,14 +1103,14 @@ hr.invis3 {
     line-height: 1;
 }
 
-.footer-text img {
+/* .footer-text img {
     max-width: 290px;
 }
 
 .footer-text p {
     margin-bottom: 0;
     padding: 1rem 0 1.2rem;
-}
+} */
 
 .blog-list-widget img {
     background: #fff none repeat scroll 0 0;
