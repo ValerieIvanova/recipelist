@@ -1,3 +1,5 @@
+import './ScrollToTop.css'
+
 export default function ScrollToTop() {
     const scrollToTop = () => {
         window.scrollTo({

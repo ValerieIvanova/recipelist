@@ -32,3 +32,267 @@
     box-shadow: 0 !important;
 }
 
+.header {
+    padding: 0.4rem 0;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav .nav-link,
+.navbar-nav .nav-link {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 0.9rem 0 0.8rem;
+    text-transform: capitalize;
+    color: #121212;
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin-left: 0.5em;
+    margin-top: 0rem;
+    vertical-align: middle;
+    content: "\f107";
+    border: 0;
+    font-family: 'FontAwesome';
+}
+
+.navbar-toggleable-md .navbar-nav .nav-link {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+}
+
+.header-section {
+    padding: 3rem 0 1.5rem;
+    background-color: #ffffff;
+}
+
+.logo img {
+    max-width: 324px;
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+    display: block;
+}
+
+.navbar-nav {
+    margin: 0;
+}
+
+.header .dropdown-menu {
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    min-width: 240px;
+    margin-top: 15px !important;
+    border-color: #edeff2;
+}
+
+.header .dropdown ul li {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.header .dropdown-item {
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 14px;
+    padding: 4px 1.8rem;
+}
+
+.header .dropdown-item:hover,
+.header .dropdown-item:focus {
+    color: #121212 !important;
+    background-color: #edeff2;
+}
+
+.header .dropdown ul li:last-child {
+    border-bottom: 0;
+}
+
+.header .dropdown-item span {
+    position: absolute;
+    right: 20px;
+    top: 2px;
+}
+
+.header-section {
+    margin-bottom: 0;
+}
+
+.topsocial .fa {
+    margin-right: 0.5rem;
+    font-size: 15px;
+}
+
+.topbar-section {
+    display: block;
+    position: relative;
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    font-size: 14px;
+    border-bottom: 1px dashed #e2e2e2;
+}
+
+.topbar-section a {
+    color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.topbar-section a:focus,
+.topbar-section a:hover {
+    color: rgba(0, 0, 0, 1) !important;
+}
+
+.topbar-section .list-inline {
+    margin: 0;
+    padding: 0;
+}
+
+.topbar-section .tooltip-inner {
+    margin-top: 10px !important;
+}
+
+.topbar-section .list-inline-item {
+    padding: 0 0.4rem !important;
+}
+
+.topmenu i {
+    padding-right: 0.3rem;
+}
+
+.menu-large {
+    overflow: hidden;
+    position: static !important;
+}
+
+.dropdown-menu.megamenu {
+    margin-top: 7px !important;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.dropdown-menu .dropdown-menu {
+    margin-top: -1px !important
+}
+
+.mega-menu-content {
+    position: relative;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.tab-details {
+    padding: 2rem 0;
+}
+
+.tab-details .blog-meta h4 {
+    font-size: 14px;
+    margin: 0;
+    padding: 0.5rem 0 0;
+    line-height: 1.4;
+}
+
+.menucat {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #111111;
+    font-size: 11px;
+    padding: 0.3rem 0.6rem;
+    line-height: 1;
+    color: #ffffff;
+}
+
+.post-media:hover .menucat {
+    display: none;
+}
+
+.post-media img {
+    width: 100%;
+}
+
+
+/* Style the tab */
+
+div.tab {
+    float: left;
+    padding: 2rem 0;
+    border-right: 1px solid #e1e3e6;
+    width: 20%;
+    background-color: #edeff2;
+}
+
+
+/* Style the buttons inside the tab */
+
+div.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border: 0;
+    outline: none;
+    text-align: right;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    color: #121212;
+    font-size: 15px;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    line-height: 1;
+    text-transform: capitalize;
+}
+
+
+/* Change background color of buttons on hover */
+
+div.tab button:hover,
+div.tab button.active {
+    background-color: #ffffff;
+    border-right: 0 solid #e1e3e6;
+    border-bottom: 1px solid #e1e3e6;
+    border-left: 0 solid #e1e3e6;
+}
+
+div.tab button:hover {
+    border-top: 0;
+}
+
+
+/* Style the tab content */
+
+.tabcontent {
+    float: left;
+    padding: 0 1rem;
+    display: none;
+    width: 80%;
+    border-left: none;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+.header .navbar-nav .has-submenu.menu-large ul li {
+    background: url(images/menubg.jpg) repeat-y center center #ffffff !important;
+}
+
+.tab-details {
+    padding: 0;
+}
+
+.tabcontent {
+    border-left: medium none;
+    display: none;
+    float: left;
+    padding: 2rem 1.5rem 0;
+    width: 80%;
+}

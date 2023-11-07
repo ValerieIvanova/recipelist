@@ -7,3 +7,26 @@
     background-color: #000000;
     background-image: none;
 }
+
+
+.footer {
+    padding: 4rem 0 4rem;
+}
+
+.footer .widget-title {
+    display: table;
+    font-size: 18px;
+    line-height: 1;
+    margin: 0 0 2rem;
+    padding: 0 0 0.5rem;
+}
+
+.footer-text .fa {
+    font-size: 21px;
+    margin: 0 0.3rem;
+}
+
+.footer.wb .hovereffect {
+    opacity: 0.1;
+    background-color: rgba(0, 0, 0, 0.0.1);
+}
