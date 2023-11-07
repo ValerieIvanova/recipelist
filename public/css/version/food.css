@@ -180,10 +180,6 @@ hr.invis3 {
     background: #fff none no-repeat scroll right center / auto 100%;
 }
 
-.navbar-toggler {
-    background: #000 none repeat scroll 0 0 !important;
-}
-
 #map {
     height: 400px;
     position: relative;
@@ -248,11 +244,8 @@ hr.invis3 {
 .dmtop,
 .btn-primary.disabled,
 .btn-primary:disabled,
-.header .dropdown-item:hover,
-.header .dropdown-item:focus,
 .dropdown-item:hover,
-.dropdown-item:focus,
-.header {
+.dropdown-item:focus {
     color: #ffffff !important;
     background-color: #ab0012 !important;
     border-color: #ab0012 !important;

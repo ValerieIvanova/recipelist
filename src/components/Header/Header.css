@@ -19,3 +19,16 @@
     opacity: 0.9;
 }
 
+.navbar-toggler {
+    background: #000 none repeat scroll 0 0 !important;
+}
+
+.header,
+.header .dropdown-item:hover,
+.header .dropdown-item:focus {
+    color: #ffffff !important;
+    background-color: #ab0012 !important;
+    border-color: #ab0012 !important;
+    box-shadow: 0 !important;
+}
+
