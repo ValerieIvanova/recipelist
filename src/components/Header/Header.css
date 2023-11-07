@@ -1,0 +1,21 @@
+.topbar-section,
+.navbar-inverse .navbar-nav .nav-link,
+.header .dropdown-menu,
+.navbar-nav .nav-link {
+    font-family: 'Montserrat', serif;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-inverse .navbar-nav .nav-link,
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+}
+
+.navbar-nav .nav-link:hover {
+    opacity: 0.9;
+}
+
