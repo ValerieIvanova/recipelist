@@ -1,3 +1,5 @@
+import './Footer.css'
+
 export default function Footer() {
     return (
         <footer className="footer">
@@ -62,11 +64,8 @@ export default function Footer() {
                       </a>
                     </div>
                   </div>
-                  {/* <!-- end footer-text --> */}
                 </div>
-                {/* <!-- end widget --> */}
               </div>
-              {/* <!-- end col --> */}
             </div>
 
             <div className="row">

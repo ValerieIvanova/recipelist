@@ -53,16 +53,6 @@ p {
     font-size: 85%;
 }
 
-.footer a,
-.footer p {
-    color: #999 !important;
-}
-
-.footer {
-    background-color: #000000;
-    background-image: none;
-}
-
 .blog-meta .rating {
     display: block;
     margin-top: 1rem;
