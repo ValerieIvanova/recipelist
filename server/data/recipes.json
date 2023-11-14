@@ -1,0 +1,58 @@
+{
+    "3564027f-adcd-4425-b2c0-1253d2386c0c": {
+        "title": "Spaghetti Bolognese",
+        "category": "Pasta",
+        "ingredients": [
+            "1 lb ground beef",
+            "1 onion, diced",
+            "2 cloves garlic, minced",
+            "1 can (28 oz) crushed tomatoes",
+            "2 tablespoons tomato paste",
+            "1 teaspoon dried oregano",
+            "1 teaspoon dried basil",
+            "Salt and pepper to taste",
+            "1/2 cup red wine",
+            "1/4 cup grated Parmesan cheese",
+            "12 oz spaghetti, cooked",
+            "Fresh parsley for garnish"
+        ],
+        "popularity": 5,
+        "instructions": [
+            "In a large skillet, brown the ground beef over medium heat.",
+            "Add diced onions and minced garlic, cook until onions are soft.",
+            "Stir in crushed tomatoes, tomato paste, oregano, basil, salt, and pepper.",
+            "Pour in red wine and let simmer for 20-30 minutes.",
+            "Cook spaghetti according to package instructions.",
+            "Serve Bolognese sauce over cooked spaghetti, garnish with Parmesan cheese and fresh parsley."
+        ],
+        "image": "https://www.allrecipes.com/img/misc/og-default.png",
+        "_id": "3564027f-adcd-4425-b2c0-1253d2386c0c"
+    },
+    "c64db398-91cd-487c-b900-86058c0422f8": {
+        "title": "Grilled Chicken Salad",
+        "category": "Salad",
+        "ingredients": [
+            "2 boneless, skinless chicken breasts",
+            "1 tablespoon olive oil",
+            "Salt and pepper to taste",
+            "6 cups mixed salad greens",
+            "1 cup cherry tomatoes, halved",
+            "1 cucumber, sliced",
+            "1/2 red onion, thinly sliced",
+            "1/4 cup feta cheese, crumbled",
+            "1/4 cup balsamic vinaigrette dressing"
+        ],
+        "popularity": 4,
+        "instructions": [
+            "Preheat grill to medium-high heat.",
+            "Brush chicken breasts with olive oil, season with salt and pepper.",
+            "Grill chicken for 6-8 minutes per side or until fully cooked.",
+            "Let chicken rest for 5 minutes, then slice into thin strips.",
+            "In a large bowl, combine salad greens, cherry tomatoes, cucumber, red onion, and feta cheese.",
+            "Top the salad with grilled chicken strips.",
+            "Drizzle balsamic vinaigrette dressing over the salad and toss gently to combine."
+        ],
+        "image": "https://www.allrecipes.com/img/misc/og-default.png",
+        "_id": "c64db398-91cd-487c-b900-86058c0422f8"
+    }
+}

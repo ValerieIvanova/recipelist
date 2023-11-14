@@ -1,5 +1,3 @@
-import SingleRecipeDetails from "../SingleRecipeDetails/SingleRecipeDetails";
-
 export default function RecipeItemGrid() {
   return (
       <div className="col-lg-3 col-md-6 col-sm-12 col-xs-12">

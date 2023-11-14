@@ -1,4 +1,4 @@
-import styles from "./ContactMe.css";
+import './ContactMe.css'
 
 export default function ContactMe() {
   return (
