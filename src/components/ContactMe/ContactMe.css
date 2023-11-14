@@ -1,0 +1,12 @@
+.form-wrapper input,
+.form-wrapper textarea{
+    text-align: center;
+}
+
+.form-wrapper {
+    text-align: center;
+}
+
+.row {
+    justify-content: center;
+}

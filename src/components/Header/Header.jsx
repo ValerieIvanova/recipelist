@@ -49,12 +49,7 @@ export default function Header() {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="food-category.html">
-                    Kitchenware
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="food-contact.html">
+                  <a className="nav-link" href="/contacts">
                     Contact Me
                   </a>
                 </li>

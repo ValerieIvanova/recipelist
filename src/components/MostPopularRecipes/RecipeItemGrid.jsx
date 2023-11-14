@@ -1,9 +1,11 @@
+import SingleRecipeDetails from "../SingleRecipeDetails/SingleRecipeDetails";
+
 export default function RecipeItemGrid() {
   return (
       <div className="col-lg-3 col-md-6 col-sm-12 col-xs-12">
         <div className="blog-box">
           <div className="post-media">
-            <a href="food-single.html" title="">
+            <a href="/recipe1" title="">
               <img
                 src="upload/blog_square_05.jpg"
                 alt=""
@@ -22,7 +24,7 @@ export default function RecipeItemGrid() {
               <i className="fa fa-star"></i>
             </div>
             <h4>
-              <a href="food-single.html" title="">
+              <a href="/recipe1" title="">
                 Plenty of creamy sweet
               </a>
             </h4>
@@ -31,13 +33,8 @@ export default function RecipeItemGrid() {
               pharetratortor.
             </p>
             <small>
-              <a href="food-single.html" title="">
+              <a href="/recipe1" title="">
                 14 July, 2017
-              </a>
-            </small>
-            <small>
-              <a href="#" title="">
-                by Matilda
               </a>
             </small>
           </div>
