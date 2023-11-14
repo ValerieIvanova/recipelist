@@ -7,6 +7,6 @@
     text-align: center;
 }
 
-.row {
+#wrapper > section > div > div > div > div > div:nth-child(3){
     justify-content: center;
 }
