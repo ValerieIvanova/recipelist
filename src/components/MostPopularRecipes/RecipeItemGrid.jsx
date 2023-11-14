@@ -1,6 +1,6 @@
-export default function RecipeItem(){
-    return(
-        <div className="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+export default function RecipeItemGrid() {
+  return (
+      <div className="col-lg-3 col-md-6 col-sm-12 col-xs-12">
         <div className="blog-box">
           <div className="post-media">
             <a href="food-single.html" title="">
@@ -43,5 +43,5 @@ export default function RecipeItem(){
           </div>
         </div>
       </div>
-    )
+  );
 }

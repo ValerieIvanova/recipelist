@@ -13,7 +13,7 @@ export default function IntroSection() {
           Welcome to my personal Blog - a culinary journey through my passion for
           cooking and sharing delicious recipes.
         </p>
-        <a href="#" className="btn btn-primary">
+        <a href="/all-recipes" className="btn btn-primary">
           View Recipes
         </a>
       </div>

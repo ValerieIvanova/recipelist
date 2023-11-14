@@ -1,11 +1,27 @@
-import Rows from "./Rows";
+import RecipeItemGrid from "./RecipeItemGrid";
 
 export default function MostPopularRecipes() {
     return (
         <section className="section lb text-muted">
         <div className="container">
-            <Rows />
-            <Rows />
+        <div className="row grid-style">
+            <RecipeItemGrid />
+            <RecipeItemGrid />
+            <RecipeItemGrid />
+            <RecipeItemGrid />
+        </div>
+
+        <hr className="invis"></hr>
+
+        <div className="row grid-style">
+            <RecipeItemGrid />
+            <RecipeItemGrid />
+            <RecipeItemGrid />
+            <RecipeItemGrid />
+        </div>
+
+        <hr className="invis"></hr>
+
         </div>
         <div className="row">
         <div className="col-md-12 text-center">

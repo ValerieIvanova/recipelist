@@ -29,12 +29,12 @@ export default function Header() {
             >
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link" href="food-index.html">
+                  <a className="nav-link" href="/">
                     Home
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="food-category.html">
+                  <a className="nav-link" href="/all-recipes">
                     Recipes
                   </a>
                 </li>
