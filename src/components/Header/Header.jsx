@@ -1,11 +1,13 @@
-import { Route, Routes } from "react-router-dom";
 import "./Header.css";
 import IntroSection from "./IntroSection";
+import { useLocation } from "react-router-dom";
 
 export default function Header() {
+  const location = useLocation();
+
   return (
     <>
-      <IntroSection />
+      {location.pathname === "/" && <IntroSection />}
 
       <header className="header">
         <div className="container">
