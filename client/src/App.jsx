@@ -7,6 +7,7 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Recipes from "./components/Recipes/Recipes";
 import ContactMe from "./components/ContactMe/ContactMe";
 import SingleRecipeDetails from "./components/SingleRecipeDetails/SingleRecipeDetails";
+import AddRecipe from "./components/AddRecipe/AddRecipe";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/recipes" element={<Recipes />} />
         <Route path="/recipe1" element={<SingleRecipeDetails />} />
+        <Route path="/add-recipe" element={<AddRecipe />} />
         <Route path="/contacts" element={<ContactMe />} />
       </Routes>
 
