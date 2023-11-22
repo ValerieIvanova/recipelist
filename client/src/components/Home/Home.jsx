@@ -1,6 +1,6 @@
 import RecipeItemGrid from "./RecipeItemGrid";
 
-export default function MostPopularRecipes() {
+export default function Home() {
     return (
         <section className="section lb text-muted">
         <div className="container">

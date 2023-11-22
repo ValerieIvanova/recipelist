@@ -34,23 +34,23 @@ export default function Header() {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/all-recipes">
+                  <a className="nav-link" href="/recipes">
                     Recipes
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="food-category.html">
-                    <i className="fa fa-play-circle-o"></i> Video Recipes
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="food-category.html">
-                    Restaurants
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="/contacts">
                     Contact Me
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="food-category.html">
+                    Login
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="food-category.html">
+                    Logout
                   </a>
                 </li>
               </ul>

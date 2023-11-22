@@ -1,7 +1,7 @@
 import AsideBar from "./AsideBar";
 import RecipeItemList from "./RecipeItemList";
 
-export default function AllRecipes() {
+export default function Recipes() {
   return (
     <>
       <section className="section lb">
