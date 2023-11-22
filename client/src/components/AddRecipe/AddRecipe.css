@@ -1,0 +1,15 @@
+.add-recipe-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    max-width: 70%;
+}
+
+.add-recipe-container input{
+    text-align: center;
+}
+
+::placeholder {
+    text-align: center;
+}
