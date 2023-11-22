@@ -1,5 +1,9 @@
 import "./Header.css";
+
+import { Link } from "react-router-dom";
+
 import IntroSection from "./IntroSection";
+
 import { useLocation } from "react-router-dom";
 
 export default function Header() {
@@ -29,29 +33,39 @@ export default function Header() {
             >
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link" href="/">
+                  <Link className="nav-link" to="/">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/recipes">
+                  <Link className="nav-link" to="/recipes">
                     Recipes
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/contacts">
+                  <Link className="nav-link" to="/contacts">
                     Contact Me
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="food-category.html">
+                  <Link className="nav-link" to="/add-recipe">
+                    Add Recipe
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/login">
                     Login
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="food-category.html">
+                  <Link className="nav-link" to="/register">
+                    Register
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/logout">
                     Logout
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
