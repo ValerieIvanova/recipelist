@@ -17,10 +17,10 @@ export const create = async (recipeData) => {
     return result;
 };
 
-// export const getById = async (id) => {
-//     const response = await fetch(`${baseURL}/recipes/${id}`);
-//     const result = await response.json();
-// };
+export const getRecipeById = async (id) => {
+    const result = await request.get(`${baseURL}/${id}`);
+    return result;
+};
 
 // export const update = async (id, recipeData) => {
 //     const response = await fetch(`${baseURL}/recipes/${id}`, {
