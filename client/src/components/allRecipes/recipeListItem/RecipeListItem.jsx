@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function RecipeListItem({
     title,
     description,
@@ -14,10 +16,10 @@ export default function RecipeListItem({
             <div className="blog-box row">
                 <div className="col-md-4">
                     <div className="post-media">
-                        <a href="food-single.html" title="">
+                        <Link to={`/recipes/${_id}`} title="">
                             <img src={imageUrl} alt="" className="img-fluid" />
                             <div className="hovereffect"></div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
@@ -30,18 +32,18 @@ export default function RecipeListItem({
                         <i className="fa fa-star"></i>
                     </div>
                     <h4>
-                        <a href="food-single.html" title="">
+                        <Link to={`/recipes/${_id}`} title="">
                             {title}
-                        </a>
+                        </Link>
                     </h4>
                     <p>{description}</p>
                     <small>
-                        <a href="blog-category-01.html" title="">
+                        <a href="#" title="">
                             {category}
                         </a>
                     </small>
                     <small>
-            <a href="food-single.html" title="">
+            <a href="#" title="">
               {createdOn}
             </a>
           </small>
