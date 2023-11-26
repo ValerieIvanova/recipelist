@@ -38,6 +38,9 @@ export default function CreateRecipe() {
                         placeholder="Category"
                     />
 
+                    <label htmlFor="description">Description</label>
+                    <textarea id="description" name="description" />
+
                     <label htmlFor="recipe-img">Image</label>
                     <input
                         type="text"
