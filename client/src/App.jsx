@@ -4,10 +4,10 @@ import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-import Recipes from "./components/Recipes/Recipes";
 import ContactMe from "./components/ContactMe/ContactMe";
 import SingleRecipeDetails from "./components/SingleRecipeDetails/SingleRecipeDetails";
 import CreateRecipe from "./components/CreateRecipe/CreateRecipe";
+import AllRecipes from "./components/allRecipes/AllRecipes";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/recipes" element={<Recipes />} />
+        <Route path="/recipes" element={<AllRecipes />} />
         <Route path="/recipe1" element={<SingleRecipeDetails />} />
         <Route path="/recipes/create" element={<CreateRecipe />} />
         <Route path="/contacts" element={<ContactMe />} />
