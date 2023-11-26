@@ -1,10 +1,10 @@
-import { request } from "../lib/request";
+import * as request from "../lib/request";
 
 const baseURL = "http://localhost:3030/jsonstore/recipes";
 
 
 export const getAll = async () => {
-    const result = await request("GET", baseURL);
+    const result = await request.get(baseURL);
     return Object.values(result);
 };
 
@@ -12,14 +12,7 @@ export const create = async (recipeData) => {
     const currentDate = new Date().toLocaleDateString('de-DE');
     const dataWithDate = { ...recipeData, createdOn: currentDate };
 
-    const response = await fetch(baseURL, {
-        method: "post",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(dataWithDate),
-    });
-    const result = await response.json();
+    const result = await request.post(baseURL, dataWithDate);
 
     return result;
 };
