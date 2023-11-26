@@ -1,4 +1,4 @@
-import AsideBar from "./asideBar/AsideBar"
+import AsideBar from "../asideBar/AsideBar"
 import RecipeListItem from "./recipeListItem/RecipeListItem"
 
 import { useEffect, useState } from "react";
