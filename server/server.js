@@ -1450,7 +1450,7 @@
       "3564027f-adcd-4425-b2c0-1253d2386c0c": {
         title: "Spaghetti Bolognese",
         category: "Pasta",
-        image: "https://www.allrecipes.com/img/misc/og-default.png",
+        imageUrl: "https://www.allrecipes.com/img/misc/og-default.png",
         ingredients: [
           "1 lb ground beef",
           "1 onion, diced",
@@ -1479,7 +1479,7 @@
       "c64db398-91cd-487c-b900-86058c0422f8": {
         title: "Grilled Chicken Salad",
         category: "Salad",
-        image: "https://www.allrecipes.com/img/misc/og-default.png",
+        imageUrl: "https://www.allrecipes.com/img/misc/og-default.png",
         ingredients: [
           "2 boneless, skinless chicken breasts",
           "1 tablespoon olive oil",

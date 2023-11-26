@@ -2,7 +2,8 @@
     "3564027f-adcd-4425-b2c0-1253d2386c0c": {
         "title": "Spaghetti Bolognese",
         "category": "Pasta",
-        "image": "https://www.allrecipes.com/img/misc/og-default.png",
+        "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/delish-bolognese-horizontal-1-1540572556.jpg",
+        "description": "A classic Italian dish made with ground beef, onions, garlic, and tomato sauce.",
         "ingredients": [
             "1 lb ground beef",
             "1 onion, diced",
@@ -26,12 +27,14 @@
             "Cook spaghetti according to package instructions.",
             "Serve Bolognese sauce over cooked spaghetti, garnish with Parmesan cheese and fresh parsley."
         ],
+        "createdOn": "25.11.2023",
         "_id": "3564027f-adcd-4425-b2c0-1253d2386c0c"
     },
     "c64db398-91cd-487c-b900-86058c0422f8": {
         "title": "Grilled Chicken Salad",
         "category": "Salad",
-        "image": "https://www.allrecipes.com/img/misc/og-default.png",
+        "imageUrl": "https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_1200/hellofresh_s3/image/60f82b14b2a8d01a500fa86a-69e7f856.jpg",
+        "description": "A classic Greek salad made with grilled chicken and fresh vegetables.",
         "ingredients": [
             "2 boneless, skinless chicken breasts",
             "1 tablespoon olive oil",
@@ -53,6 +56,7 @@
             "Top the salad with grilled chicken strips.",
             "Drizzle balsamic vinaigrette dressing over the salad and toss gently to combine."
         ],
+        "createdOn": "25.11.2023",
         "_id": "c64db398-91cd-487c-b900-86058c0422f8"
     }
 }
