@@ -3,11 +3,11 @@ import "./DetailsRecipe.css";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import * as recipeService from "../../services/RecipeService";
+import * as recipeService from "../../services/recipeService";
+import * as commentService from "../../services/commentService";
 
 import AsideBar from "../asideBar/AsideBar";
 import Comments from "./comments/Comments";
-import CreateComment from "./comments/CreateComment";
 import YouMayAlsoLike from "./youMayAlsoLike/YouMayAlsoLike";
 
 export default function DetailsRecipe() {
@@ -17,6 +17,18 @@ export default function DetailsRecipe() {
     useEffect(() => {
         recipeService.getRecipeById(recipeId).then(setRecipe);
     }, [recipeId]);
+
+    const addCommentHandler = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        const newComment = await commentService.create(
+            recipeId,
+            formData.get("username"),
+            formData.get("comment")
+        );
+
+        console.log(newComment);
+    };
 
     return (
         <>
@@ -109,7 +121,37 @@ export default function DetailsRecipe() {
                                 <hr className="invis1" />
                                 <Comments />
                                 <hr className="invis1" />
-                                <CreateComment />
+                                <div className="custombox clearfix">
+                                    <h4 className="small-title">
+                                        Leave a Reply
+                                    </h4>
+                                    <div className="row">
+                                        <div className="col-lg-12">
+                                            <form
+                                                className="form-wrapper"
+                                                onSubmit={addCommentHandler}
+                                            >
+                                                <input
+                                                    type="text"
+                                                    name="username"
+                                                    className="form-control"
+                                                    placeholder="Your name"
+                                                />
+                                                <textarea
+                                                    name="comment"
+                                                    className="form-control"
+                                                    placeholder="Your comment"
+                                                />
+                                                <button
+                                                    type="submit"
+                                                    className="btn btn-primary"
+                                                >
+                                                    Submit Comment
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <AsideBar />
