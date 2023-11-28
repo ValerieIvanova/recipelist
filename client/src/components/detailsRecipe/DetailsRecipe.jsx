@@ -7,15 +7,16 @@ import * as recipeService from "../../services/recipeService";
 import * as commentService from "../../services/commentService";
 
 import AsideBar from "../asideBar/AsideBar";
-import Comments from "./comments/Comments";
 import YouMayAlsoLike from "./youMayAlsoLike/YouMayAlsoLike";
 
 export default function DetailsRecipe() {
     const [recipe, setRecipe] = useState({});
+    const [comments, setComments] = useState([]);
     const { recipeId } = useParams();
 
     useEffect(() => {
         recipeService.getRecipeById(recipeId).then(setRecipe);
+        commentService.getAllCommentsByRecipeId(recipeId).then(setComments);
     }, [recipeId]);
 
     const addCommentHandler = async (e) => {
@@ -26,8 +27,7 @@ export default function DetailsRecipe() {
             formData.get("username"),
             formData.get("comment")
         );
-
-        console.log(newComment);
+        setComments((state) => [...state, newComment]);
     };
 
     return (
@@ -119,7 +119,51 @@ export default function DetailsRecipe() {
                                 <hr className="invis1" />
                                 <YouMayAlsoLike />
                                 <hr className="invis1" />
-                                <Comments />
+                                <div className="custombox clearfix">
+                                    <h4 className="small-title">3 Comments</h4>
+                                    <div className="row">
+                                        <div className="col-lg-12">
+                                            <div className="comments-list">
+                                                {comments.map(
+                                                    ({
+                                                        _id,
+                                                        username,
+                                                        text,
+                                                    }) => (
+                                                        <div
+                                                            className="media"
+                                                            key={_id}
+                                                        >
+                                                            <a
+                                                                className="media-left"
+                                                                href="#"
+                                                            >
+                                                                <img
+                                                                    src="/upload/author.jpg"
+                                                                    alt=""
+                                                                    className="rounded-circle"
+                                                                />
+                                                            </a>
+                                                            <div className="media-body">
+                                                                <h4 className="media-heading user_name">
+                                                                    {username}{" "}
+                                                                    <small>
+                                                                        5 days
+                                                                        ago
+                                                                    </small>
+                                                                </h4>
+                                                                <p>{text}</p>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                )}
+                                            </div>
+                                            {comments.length === 0 && (
+                                                <p>No comments yet</p>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
                                 <hr className="invis1" />
                                 <div className="custombox clearfix">
                                     <h4 className="small-title">
