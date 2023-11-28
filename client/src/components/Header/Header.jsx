@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 import IntroSection from "./IntroSection";
+import Path from "../Path";
 
 
 export default function Header() {
@@ -33,24 +34,24 @@ export default function Header() {
                         >
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/">
+                                    <Link className="nav-link" to={Path.Home}>
                                         Home
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/recipes">
+                                    <Link className="nav-link" to={Path.Recipes}>
                                         Recipes
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/contacts">
+                                    <Link className="nav-link" to={Path.Contacts}>
                                         Contact Me
                                     </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link
                                         className="nav-link"
-                                        to="/recipes/create"
+                                        to={Path.CreateRecipe}
                                     >
                                         Add Recipe
                                     </Link>

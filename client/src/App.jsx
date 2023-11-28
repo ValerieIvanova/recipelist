@@ -8,6 +8,7 @@ import ContactMe from "./components/contactMe/ContactMe";
 import DetailsRecipe from "./components/detailsRecipe/DetailsRecipe";
 import CreateRecipe from "./components/CreateRecipe/CreateRecipe";
 import AllRecipes from "./components/AllRecipes/AllRecipes"
+import Path from "./components/Path";
 
 function App() {
   return (
@@ -15,13 +16,13 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path={Path.Home} element={<Home />} />
         {/* <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} /> */}
-        <Route path="/recipes" element={<AllRecipes />} />
-        <Route path="/recipes/create" element={<CreateRecipe />} />
-        <Route path="/recipes/:recipeId" element={<DetailsRecipe />} />
-        <Route path="/contacts" element={<ContactMe />} />
+        <Route path={Path.Recipes} element={<AllRecipes />} />
+        <Route path={Path.CreateRecipe} element={<CreateRecipe />} />
+        <Route path={Path.DetailsRecipe} element={<DetailsRecipe />} />
+        <Route path={Path.Contacts} element={<ContactMe />} />
       </Routes>
 
       <Footer />
