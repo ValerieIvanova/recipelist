@@ -1,6 +1,6 @@
 import RandomRecipe from "./RandomRecipe";
 
-import * as recipeService from "../../../services/RecipeService";
+import * as recipeService from "../../../services/recipeService";
 
 import { useEffect, useState } from "react";
 
