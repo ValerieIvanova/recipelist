@@ -1,5 +1,34 @@
 {
-    "3564027f-adcd-4425-b2c0-1253d2386c0c": {
+    "a8c0ded0-09b5-4c49-ac80-48e374f65a98": {
+        "title": "Grilled Chicken Salad",
+        "category": "Salad",
+        "imageUrl": "https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_1200/hellofresh_s3/image/60f82b14b2a8d01a500fa86a-69e7f856.jpg",
+        "description": "A classic Greek salad made with grilled chicken and fresh vegetables.",
+        "ingredients": [
+            "2 boneless, skinless chicken breasts",
+            "1 tablespoon olive oil",
+            "Salt and pepper to taste",
+            "6 cups mixed salad greens",
+            "1 cup cherry tomatoes, halved",
+            "1 cucumber, sliced",
+            "1/2 red onion, thinly sliced",
+            "1/4 cup feta cheese, crumbled",
+            "1/4 cup balsamic vinaigrette dressing"
+        ],
+        "popularity": 4,
+        "instructions": [
+            "Preheat grill to medium-high heat.",
+            "Brush chicken breasts with olive oil, season with salt and pepper.",
+            "Grill chicken for 6-8 minutes per side or until fully cooked.",
+            "Let chicken rest for 5 minutes, then slice into thin strips.",
+            "In a large bowl, combine salad greens, cherry tomatoes, cucumber, red onion, and feta cheese.",
+            "Top the salad with grilled chicken strips.",
+            "Drizzle balsamic vinaigrette dressing over the salad and toss gently to combine."
+        ],
+        "createdOn": "25.11.2023",
+        "_id": "a8c0ded0-09b5-4c49-ac80-48e374f65a98"
+    },
+    "8f2d1c87-8e98-4150-82c2-c4db9133ac02": {
         "title": "Spaghetti Bolognese",
         "category": "Pasta",
         "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/delish-bolognese-horizontal-1-1540572556.jpg",
@@ -28,35 +57,82 @@
             "Serve Bolognese sauce over cooked spaghetti, garnish with Parmesan cheese and fresh parsley."
         ],
         "createdOn": "25.11.2023",
-        "_id": "3564027f-adcd-4425-b2c0-1253d2386c0c"
+        "_id": "8f2d1c87-8e98-4150-82c2-c4db9133ac02"
     },
-    "c64db398-91cd-487c-b900-86058c0422f8": {
-        "title": "Grilled Chicken Salad",
-        "category": "Salad",
-        "imageUrl": "https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_1200/hellofresh_s3/image/60f82b14b2a8d01a500fa86a-69e7f856.jpg",
-        "description": "A classic Greek salad made with grilled chicken and fresh vegetables.",
+    "c8a1979f-92ba-4a25-9d0b-8be129c51721": {
+        "title": "Avocado Toast",
+        "category": "Breakfast",
+        "imageUrl": "https://media.istockphoto.com/id/1311507085/photo/avocado-toast-with-eggs-and-roasted-tomatoes.jpg?s=612x612&w=0&k=20&c=DquSZopXdPOXhJEltAFwaaxZIdiqsxglab25PVX8wf8=",
+        "description": "A simple yet delicious breakfast toast made with mashed avocado on toasted bread.",
         "ingredients": [
-            "2 boneless, skinless chicken breasts",
-            "1 tablespoon olive oil",
+            "2 ripe avocados",
+            "4 slices whole grain bread, toasted",
+            "2 tablespoons lemon juice",
             "Salt and pepper to taste",
-            "6 cups mixed salad greens",
-            "1 cup cherry tomatoes, halved",
-            "1 cucumber, sliced",
-            "1/2 red onion, thinly sliced",
-            "1/4 cup feta cheese, crumbled",
-            "1/4 cup balsamic vinaigrette dressing"
+            "Optional toppings: cherry tomatoes, red pepper flakes, sesame seeds"
+        ],
+        "popularity": 3,
+        "instructions": [
+            "In a bowl, mash the avocados with lemon juice, salt, and pepper.",
+            "Spread the mashed avocado onto toasted bread slices.",
+            "Top with desired toppings like cherry tomatoes, red pepper flakes, or sesame seeds."
+        ],
+        "createdOn": "25.11.2023",
+        "_id": "c8a1979f-92ba-4a25-9d0b-8be129c51721"
+    },
+    "11abdef3-6272-4cf0-8723-acc187438b92": {
+        "title": "Vegan Buddha Bowl",
+        "category": "Vegan",
+        "imageUrl": "https://media.istockphoto.com/id/1293479617/photo/woman-hands-eating-vegan-salad-of-baked-vegetables-avocado-tofu-and-buckwheat-buddha-bowl-top.jpg?s=612x612&w=0&k=20&c=jATx1jeDBsUgT2zIla6eh-i1OUPvIfgkb0-4QnAruAY=",
+        "description": "A nourishing vegan bowl filled with grains, vegetables, and a flavorful dressing.",
+        "ingredients": [
+            "1 cup cooked quinoa or brown rice",
+            "1 cup cooked chickpeas",
+            "2 cups mixed vegetables (e.g., broccoli, carrots, bell peppers)",
+            "1/2 avocado, sliced",
+            "1/4 cup hummus",
+            "2 tablespoons tahini",
+            "2 tablespoons lemon juice",
+            "2 tablespoons olive oil",
+            "Salt and pepper to taste"
         ],
         "popularity": 4,
         "instructions": [
-            "Preheat grill to medium-high heat.",
-            "Brush chicken breasts with olive oil, season with salt and pepper.",
-            "Grill chicken for 6-8 minutes per side or until fully cooked.",
-            "Let chicken rest for 5 minutes, then slice into thin strips.",
-            "In a large bowl, combine salad greens, cherry tomatoes, cucumber, red onion, and feta cheese.",
-            "Top the salad with grilled chicken strips.",
-            "Drizzle balsamic vinaigrette dressing over the salad and toss gently to combine."
+            "Divide cooked quinoa or brown rice into bowls.",
+            "Arrange chickpeas, mixed vegetables, and sliced avocado on top.",
+            "In a small bowl, whisk together hummus, tahini, lemon juice, olive oil, salt, and pepper.",
+            "Drizzle the dressing over the bowl before serving."
         ],
         "createdOn": "25.11.2023",
-        "_id": "c64db398-91cd-487c-b900-86058c0422f8"
+        "_id": "11abdef3-6272-4cf0-8723-acc187438b92"
+    },
+    "eb727d21-284a-47ff-a374-3bb36375bd21": {
+        "title": "Mango Chicken Curry",
+        "category": "Curry",
+        "imageUrl": "https://img.taste.com.au/OtwRbb61/taste/2016/11/mango-chicken-curry-102913-1.jpeg",
+        "description": "A flavorful curry made with tender chicken, ripe mangoes, and aromatic spices.",
+        "ingredients": [
+            "1 lb boneless, skinless chicken thighs, cut into cubes",
+            "2 ripe mangoes, peeled and diced",
+            "1 onion, finely chopped",
+            "2 cloves garlic, minced",
+            "1 tablespoon curry powder",
+            "1 teaspoon ground turmeric",
+            "1 teaspoon ground cumin",
+            "1 can (14 oz) coconut milk",
+            "Salt and pepper to taste",
+            "Fresh cilantro for garnish"
+        ],
+        "popularity": 5,
+        "instructions": [
+            "In a skillet, sauté onions and garlic until fragrant.",
+            "Add chicken cubes and cook until browned.",
+            "Stir in curry powder, turmeric, and cumin.",
+            "Add diced mangoes and coconut milk, let simmer until chicken is cooked through.",
+            "Season with salt and pepper.",
+            "Garnish with fresh cilantro before serving."
+        ],
+        "createdOn": "25.11.2023",
+        "_id": "eb727d21-284a-47ff-a374-3bb36375bd21"
     }
 }
