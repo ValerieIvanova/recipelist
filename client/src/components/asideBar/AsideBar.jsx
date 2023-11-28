@@ -23,7 +23,7 @@ export default function AsideBar() {
               >
                 <div className="w-100 justify-content-between">
                   <img
-                    src="upload/blog_square_14.jpg"
+                    src="/upload/blog_square_14.jpg"
                     alt=""
                     className="img-fluid float-left"
                   />
@@ -40,7 +40,7 @@ export default function AsideBar() {
               >
                 <div className="w-100 justify-content-between">
                   <img
-                    src="upload/blog_square_12.jpg"
+                    src="/upload/blog_square_12.jpg"
                     alt=""
                     className="img-fluid float-left"
                   />
@@ -57,7 +57,7 @@ export default function AsideBar() {
               >
                 <div className="w-100 last-item justify-content-between">
                   <img
-                    src="upload/blog_square_11.jpg"
+                    src="/upload/blog_square_11.jpg"
                     alt=""
                     className="img-fluid float-left"
                   />

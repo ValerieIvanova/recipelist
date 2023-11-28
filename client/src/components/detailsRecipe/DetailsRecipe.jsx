@@ -1,4 +1,4 @@
-import './DetailsRecipe.css';
+import "./DetailsRecipe.css";
 
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -8,14 +8,14 @@ import * as recipeService from "../../services/RecipeService";
 import AsideBar from "../asideBar/AsideBar";
 import Comments from "./comments/Comments";
 import CreateComment from "./comments/CreateComment";
+import YouMayAlsoLike from "./youMayAlsoLike/YouMayAlsoLike";
 
 export default function DetailsRecipe() {
     const [recipe, setRecipe] = useState({});
     const { recipeId } = useParams();
 
     useEffect(() => {
-        recipeService.getRecipeById(recipeId)
-          .then(setRecipe);
+        recipeService.getRecipeById(recipeId).then(setRecipe);
     }, [recipeId]);
 
     return (
@@ -24,7 +24,11 @@ export default function DetailsRecipe() {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-10 offset-lg-1 img-container">
-                            <img src={recipe.imageUrl} alt="" className="recipe-img" />
+                            <img
+                                src={recipe.imageUrl}
+                                alt=""
+                                className="recipe-img"
+                            />
                         </div>
                     </div>
                 </div>
@@ -38,12 +42,12 @@ export default function DetailsRecipe() {
                                     <h3>{recipe.title}</h3>
                                     <div className="blog-meta big-meta">
                                         <small>
-                                            <a href="single.html" title="">
+                                            <a href="#" title="">
                                                 {recipe.createdOn}
                                             </a>
                                         </small>
                                         <small>
-                                            <a href="single.html" title="">
+                                            <a href="#" title="">
                                                 {recipe.category}
                                             </a>
                                         </small>
@@ -89,128 +93,19 @@ export default function DetailsRecipe() {
                                     </div>
                                 </div>
                                 <div className="blog-content">
-                                    <p>
-                                        {recipe.description}
-                                    </p>
+                                    <p>{recipe.description}</p>
                                     <h3>
-                                        <strong>
-                                            Ingredients:
-                                        </strong>
+                                        <strong>Ingredients:</strong>
                                     </h3>
-                                    <p>
-                                        {recipe.ingredients}
-                                    </p>
+                                    <p>{recipe.ingredients}</p>
                                     <h3>
-                                        <strong>
-                                            How it's made:
-                                        </strong>
+                                        <strong>How it's made:</strong>
                                     </h3>
-                                    <p>
-                                        {recipe.instructions}
-                                    </p>
-
+                                    <p>{recipe.instructions}</p>
                                 </div>
 
                                 <hr className="invis1" />
-                                <div className="custombox clearfix">
-                                    <h4 className="small-title">
-                                        You may also like
-                                    </h4>
-                                    <div className="row">
-                                        <div className="col-lg-6">
-                                            <div className="blog-box">
-                                                <div className="post-media">
-                                                    <a
-                                                        href="single.html"
-                                                        title=""
-                                                    >
-                                                        <img
-                                                            src="upload/blog_square_10.jpg"
-                                                            alt=""
-                                                            className="img-fluid"
-                                                        />
-                                                        <div className="hovereffect">
-                                                            <span className="" />
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div className="blog-meta">
-                                                    <h4>
-                                                        <a
-                                                            href="single.html"
-                                                            title=""
-                                                        >
-                                                            We are guests of ABC
-                                                            Design Studio
-                                                        </a>
-                                                    </h4>
-                                                    <small>
-                                                        <a
-                                                            href="blog-category-01.html"
-                                                            title=""
-                                                        >
-                                                            Trends
-                                                        </a>
-                                                    </small>
-                                                    <small>
-                                                        <a
-                                                            href="blog-category-01.html"
-                                                            title=""
-                                                        >
-                                                            21 July, 2017
-                                                        </a>
-                                                    </small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-6">
-                                            <div className="blog-box">
-                                                <div className="post-media">
-                                                    <a
-                                                        href="single.html"
-                                                        title=""
-                                                    >
-                                                        <img
-                                                            src="upload/blog_square_11.jpg"
-                                                            alt=""
-                                                            className="img-fluid"
-                                                        />
-                                                        <div className="hovereffect">
-                                                            <span className="" />
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div className="blog-meta">
-                                                    <h4>
-                                                        <a
-                                                            href="single.html"
-                                                            title=""
-                                                        >
-                                                            Nostalgia at work
-                                                            with family
-                                                        </a>
-                                                    </h4>
-                                                    <small>
-                                                        <a
-                                                            href="blog-category-01.html"
-                                                            title=""
-                                                        >
-                                                            News
-                                                        </a>
-                                                    </small>
-                                                    <small>
-                                                        <a
-                                                            href="blog-category-01.html"
-                                                            title=""
-                                                        >
-                                                            20 July, 2017
-                                                        </a>
-                                                    </small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <YouMayAlsoLike />
                                 <hr className="invis1" />
                                 <Comments />
                                 <hr className="invis1" />

@@ -10,7 +10,7 @@ export default function Footer() {
                   <div className="footer-text text-center">
                     <a href="food-index.html">
                       <img
-                        src="images/version/food-logo.png"
+                        src="/images/version/food-logo.png"
                         alt=""
                         className="img-fluid"
                       />

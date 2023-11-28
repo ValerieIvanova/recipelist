@@ -9,7 +9,7 @@ export default function Comments() {
                             <div className="media">
                                 <a className="media-left" href="#">
                                     <img
-                                        src="upload/author.jpg"
+                                        src="/upload/author.jpg"
                                         alt=""
                                         className="rounded-circle"
                                     />
@@ -41,7 +41,7 @@ export default function Comments() {
                             <div className="media">
                                 <a className="media-left" href="#">
                                     <img
-                                        src="upload/author_01.jpg"
+                                        src="/upload/author_01.jpg"
                                         alt=""
                                         className="rounded-circle"
                                     />
@@ -69,7 +69,7 @@ export default function Comments() {
                             <div className="media last-child">
                                 <a className="media-left" href="#">
                                     <img
-                                        src="upload/author_02.jpg"
+                                        src="/upload/author_02.jpg"
                                         alt=""
                                         className="rounded-circle"
                                     />

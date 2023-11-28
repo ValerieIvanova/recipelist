@@ -3,9 +3,9 @@ export default function RecipeItemGrid() {
       <div className="col-lg-3 col-md-6 col-sm-12 col-xs-12">
         <div className="blog-box">
           <div className="post-media">
-            <a href="/recipe1" title="">
+            <a href="recipe/:recipeId" title="">
               <img
-                src="upload/blog_square_05.jpg"
+                src="/upload/blog_square_05.jpg"
                 alt=""
                 className="img-fluid"
               />

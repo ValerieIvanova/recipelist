@@ -752,7 +752,7 @@ a {
 }
 
 .banner-spot {
-    background: #edeff2 url("images/ads-bg.png") no-repeat scroll center right / auto 100%;
+    background: #edeff2 url("/images/ads-bg.png") no-repeat scroll center right / auto 100%;
     clear: both;
     display: block;
     height: auto;
@@ -920,7 +920,7 @@ hr.invis3 {
     position: absolute;
     height: 90px;
     display: block;
-    content: url(images/hover.png);
+    content: url(/images/hover.png);
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     -ms-transition: all .3s ease-in-out;
@@ -937,7 +937,7 @@ hr.invis3 {
 }
 
 .hovereffect span.videohover::before {
-    content: url(images/videohover.png);
+    content: url(/images/videohover.png);
 }
 
 .blog-list .blog-meta.big-meta h4 {

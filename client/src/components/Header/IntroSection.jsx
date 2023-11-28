@@ -7,7 +7,7 @@ export default function IntroSection() {
       <div className="container">
         <a href="#">
           <img
-            src="images/version/food-logo.png"
+            src="/images/version/food-logo.png"
             alt=""
             className="img-fluid"
           />
