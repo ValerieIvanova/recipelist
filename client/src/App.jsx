@@ -10,6 +10,7 @@ import CreateRecipe from "./components/CreateRecipe/CreateRecipe";
 import AllRecipes from "./components/AllRecipes/AllRecipes";
 import GetStarted from "./components/getStarted/GetStarted";
 
+import AuthContext from "./contexts/authContext";
 import Path from "./components/Path";
 import { useState } from "react";
 
@@ -20,22 +21,24 @@ function App() {
     };
 
     return (
-        <div id="wrapper">
-            <Header />
+        <AuthContext.Provider value={{ loginSubmitHandler }}>
+            <div id="wrapper">
+                <Header />
 
-            <Routes>
-                <Route path={Path.Home} element={<Home />} />
-                <Route path={Path.Recipes} element={<AllRecipes />} />
-                <Route path={Path.CreateRecipe} element={<CreateRecipe />} />
-                <Route path={Path.DetailsRecipe} element={<DetailsRecipe />} />
-                <Route path={Path.Contacts} element={<ContactMe />} />
-                <Route path={Path.GetStarted} element={<GetStarted loginSubmitHandler={loginSubmitHandler}/>} />
-            </Routes>
+                <Routes>
+                    <Route path={Path.Home} element={<Home />} />
+                    <Route path={Path.Recipes} element={<AllRecipes />} />
+                    <Route path={Path.CreateRecipe} element={<CreateRecipe />} />
+                    <Route path={Path.DetailsRecipe} element={<DetailsRecipe />} />
+                    <Route path={Path.Contacts} element={<ContactMe />} />
+                    <Route path={Path.GetStarted} element={<GetStarted />} />
+                </Routes>
 
-            <Footer />
+                <Footer />
 
-            <ScrollToTop />
-        </div>
+                <ScrollToTop />
+            </div>
+        </AuthContext.Provider>
     );
 }
 
