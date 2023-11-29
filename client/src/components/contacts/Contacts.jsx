@@ -8,7 +8,7 @@ export default function Contacts() {
           <div className="row">
             <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12">
               <h2>
-                <i className="fa fa-envelope-open-o bg-red" /> Contact me{" "}
+                <i className="fa fa-envelope-open-o bg-red" /> Contact Us{" "}
               </h2>
             </div>
           </div>

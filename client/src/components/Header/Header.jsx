@@ -2,11 +2,16 @@ import "./header.css";
 
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { useContext } from "react";
+
+import Path from "../paths";
+import AuthContext from "../../contexts/authContext";
 
 import IntroSection from "./IntroSection";
-import Path from "../paths";
 
 export default function Header() {
+    const { isAuthenticated, username } = useContext(AuthContext);
+
     const location = useLocation();
 
     return (
@@ -50,32 +55,51 @@ export default function Header() {
                                         className="nav-link"
                                         to={Path.Contacts}
                                     >
-                                        Contact Me
+                                        Contacts
                                     </Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link
-                                        className="nav-link"
-                                        to={Path.CreateRecipe}
-                                    >
-                                        Add Recipe
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to={Path.GetStarted}>
-                                        GetStarted
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to={Path.MyRecipes}>
-                                        My Recipes
-                                    </Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/logout">
-                                        Logout
-                                    </Link>
-                                </li>
+                                {isAuthenticated && (
+                                    <>
+                                        <li className="nav-item">
+                                            <Link
+                                                className="nav-link"
+                                                to={Path.CreateRecipe}
+                                            >
+                                                Add Recipe
+                                            </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link
+                                                className="nav-link"
+                                                to={Path.MyRecipes}
+                                            >
+                                                My Recipes
+                                            </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" to="#">
+                                                Profile
+                                            </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link
+                                                className="nav-link"
+                                                to="/logout"
+                                            >
+                                                Logout
+                                            </Link>
+                                        </li>
+                                    </>
+                                )}
+                                {!isAuthenticated &&
+                                    location.pathname !== "/" && (
+                                        <Link
+                                            to={Path.GetStarted}
+                                            className="btn btn-primary"
+                                        >
+                                            Get Started
+                                        </Link>
+                                    )}
                             </ul>
                         </div>
                     </nav>
