@@ -35,6 +35,7 @@ export default function RecipeItemGrid() {
                 14 July, 2017
               </a>
             </small>
+            <small><a href="#" title="">by Matilda</a></small>
           </div>
         </div>
       </div>

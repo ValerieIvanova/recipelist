@@ -43,10 +43,15 @@ export default function RecipeListItem({
                         </a>
                     </small>
                     <small>
-            <a href="#" title="">
-              {createdOn}
-            </a>
-          </small>
+                        <a href="#" title="">
+                            {createdOn}
+                        </a>
+                    </small>
+                    <small>
+                        <a href="#" title="">
+                            by Matilda
+                        </a>
+                    </small>
                 </div>
             </div>
             <hr className="invis" />

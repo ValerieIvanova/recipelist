@@ -19,8 +19,8 @@ export default function Footer() {
                                     Whip, Mix and
                                     Savor!
                                     All recipes are culinary adventures waiting
-                                    to be explored. Join my flavorful journey
-                                    and unleash your inner chef!{" "}
+                                    to be explored. Join our flavorful journey
+                                    and unleash your inner chef!
                                 </p>
                                 <div className="social">
                                     <a
@@ -73,7 +73,7 @@ export default function Footer() {
                     <div className="col-md-12 text-center">
                         <br />
                         <div className="copyright">
-                            &copy; 2023 RecipeList Pty Ltd.{" "}
+                            &copy; 2023 RecipeList Pty Ltd.
                         </div>
                     </div>
                 </div>
