@@ -3,7 +3,7 @@ import RecipeListItem from "./recipeListItem/RecipeListItem"
 
 import { useEffect, useState } from "react";
 
-import * as recipeService from "../../services/RecipeService";
+import * as recipeService from "../../services/recipeService";
 
 export default function AllRecipes() {
     const [recipes, setRecipes] = useState([]);

@@ -1,4 +1,4 @@
-import './ScrollToTop.css'
+import './scrollToTop.css'
 
 export default function ScrollToTop() {
     const scrollToTop = () => {

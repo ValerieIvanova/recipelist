@@ -1,6 +1,6 @@
-import './ContactMe.css'
+import './contacts.css'
 
-export default function ContactMe() {
+export default function Contacts() {
   return (
     <>
       <div className="page-title wb">
@@ -11,13 +11,9 @@ export default function ContactMe() {
                 <i className="fa fa-envelope-open-o bg-red" /> Contact me{" "}
               </h2>
             </div>
-            {/* end col */}
           </div>
-          {/* end row */}
         </div>
-        {/* end container */}
       </div>
-      {/* end page-title */}
       <section className="section wb">
         <div className="container">
           <div className="row">

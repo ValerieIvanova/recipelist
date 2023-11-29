@@ -3,7 +3,7 @@ import "./getStarted.css";
 import Login from "./login/Login";
 import Register from "./register/Register";
 
-export default function GetStarted({ loginSubmitHandler }) {
+export default function GetStarted() {
     return (
         <>
             <div className="row">
@@ -16,7 +16,7 @@ export default function GetStarted({ loginSubmitHandler }) {
                                     type="radio"
                                     name="tab"
                                     className="sign-in"
-                                    checked
+                                    defaultChecked
                                 />
                                 <label htmlFor="tab-1" className="tab">
                                     Login
@@ -31,9 +31,7 @@ export default function GetStarted({ loginSubmitHandler }) {
                                     Sign Up
                                 </label>
                                 <div className="login-space">
-                                    <Login
-                                        loginSubmitHandler={loginSubmitHandler}
-                                    />
+                                    <Login />
                                     <Register />
                                 </div>
                             </div>

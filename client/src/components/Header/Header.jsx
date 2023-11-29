@@ -1,4 +1,4 @@
-import "./Header.css";
+import "./header.css";
 
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";

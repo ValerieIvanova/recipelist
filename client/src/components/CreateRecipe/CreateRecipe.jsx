@@ -1,8 +1,8 @@
-import "./CreateRecipe.css";
+import "./createRecipe.css";
 
 import { useNavigate } from "react-router-dom";
 
-import * as recipeService from "../../services/RecipeService";
+import * as recipeService from "../../services/recipeService";
 
 export default function CreateRecipe() {
     const navigate = useNavigate();
