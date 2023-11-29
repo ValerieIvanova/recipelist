@@ -7,32 +7,36 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import ContactMe from "./components/contactMe/ContactMe";
 import DetailsRecipe from "./components/detailsRecipe/DetailsRecipe";
 import CreateRecipe from "./components/CreateRecipe/CreateRecipe";
-import AllRecipes from "./components/AllRecipes/AllRecipes"
+import AllRecipes from "./components/AllRecipes/AllRecipes";
 import GetStarted from "./components/getStarted/GetStarted";
 
 import Path from "./components/Path";
+import { useState } from "react";
 
 function App() {
-  return (
-    <div id="wrapper">
-      <Header />
+    const [auth, setAuth] = useState({});
+    const loginSubmitHandler = (values) => {
+        console.log(values);
+    };
 
-      <Routes>
-        <Route path={Path.Home} element={<Home />} />
-        {/* <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} /> */}
-        <Route path={Path.Recipes} element={<AllRecipes />} />
-        <Route path={Path.CreateRecipe} element={<CreateRecipe />} />
-        <Route path={Path.DetailsRecipe} element={<DetailsRecipe />} />
-        <Route path={Path.Contacts} element={<ContactMe />} />
-        <Route path={Path.GetStarted} element={<GetStarted />} />
-      </Routes>
+    return (
+        <div id="wrapper">
+            <Header />
 
-      <Footer />
+            <Routes>
+                <Route path={Path.Home} element={<Home />} />
+                <Route path={Path.Recipes} element={<AllRecipes />} />
+                <Route path={Path.CreateRecipe} element={<CreateRecipe />} />
+                <Route path={Path.DetailsRecipe} element={<DetailsRecipe />} />
+                <Route path={Path.Contacts} element={<ContactMe />} />
+                <Route path={Path.GetStarted} element={<GetStarted loginSubmitHandler={loginSubmitHandler}/>} />
+            </Routes>
 
-      <ScrollToTop />
-    </div>
-  );
+            <Footer />
+
+            <ScrollToTop />
+        </div>
+    );
 }
 
 export default App;

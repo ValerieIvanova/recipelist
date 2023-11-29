@@ -1,11 +1,9 @@
 import "./getStarted.css";
 
-import useForm from "../../hooks/useForm";
-
 import Login from "./login/Login";
 import Register from "./register/Register";
 
-export default function GetStarted() {
+export default function GetStarted({ loginSubmitHandler }) {
     return (
         <>
             <div className="row">
@@ -33,7 +31,9 @@ export default function GetStarted() {
                                     Sign Up
                                 </label>
                                 <div className="login-space">
-                                    <Login />
+                                    <Login
+                                        loginSubmitHandler={loginSubmitHandler}
+                                    />
                                     <Register />
                                 </div>
                             </div>

@@ -1,7 +1,15 @@
-export default function Login() {
-    const { values, onChange, onSubmit } = useForm({
-        email: "",
-        password: "",
+import useForm from "../../../hooks/useForm";
+
+const LoginFormKeys = {
+    Email: "email",
+    Password: "password",
+};
+
+export default function Login({ loginSubmitHandler }) {
+    console.log(loginSubmitHandler);
+    const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+        [LoginFormKeys.Email]: "",
+        [LoginFormKeys.Password]: "",
     });
 
     return (
@@ -9,16 +17,16 @@ export default function Login() {
             <form className="login-form" onSubmit={onSubmit}>
                 <div className="group">
                     <label htmlFor="username" className="label">
-                        Username
+                        Email
                     </label>
                     <input
                         id="email-login"
                         type="email"
-                        name="email"
+                        name={LoginFormKeys.Email}
                         className="input"
                         placeholder="Enter your email"
                         onChange={onChange}
-                        value={values.email}
+                        value={values[LoginFormKeys.Email]}
                     />
                 </div>
                 <div className="group">
@@ -29,30 +37,14 @@ export default function Login() {
                         id="pass"
                         type="password"
                         className="input"
-                        name="password"
+                        name={LoginFormKeys.Password}
                         placeholder="Enter your password"
                         onChange={onChange}
-                        value={values.password}
+                        value={values[LoginFormKeys.Password]}
                     />
                 </div>
-                {/* <div className="group">
-                    <input
-                        id="check"
-                        type="checkbox"
-                        className="check"
-                        checked
-                        onChange={onChange}
-                        />
-                    <label htmlFor="check">
-                        <span className="icon"></span> Keep me Signed in
-                    </label>
-                </div> */}
                 <div className="group">
-                    <input
-                        type="submit"
-                        className="button"
-                        value="Sign In"
-                    />
+                    <input type="submit" className="button" value="Sign In" />
                 </div>
                 <div className="hr"></div>
                 <div className="foot">
