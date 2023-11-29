@@ -5,6 +5,7 @@ const Path = {
     DetailsRecipe: '/recipes/:recipeId',
     Contacts: '/contacts',
     GetStarted: '/get-started',
+    MyRecipes: '/my-recipes',
 }
 
 export default Path

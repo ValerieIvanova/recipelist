@@ -1,4 +1,9 @@
-import { Route, Routes } from "react-router-dom";
+import { useState } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
+
+import * as authService from "./services/authService";
+import AuthContext from "./contexts/authContext";
+import Path from "./components/paths";
 
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
@@ -9,15 +14,16 @@ import DetailsRecipe from "./components/detailsRecipe/DetailsRecipe";
 import CreateRecipe from "./components/createRecipe/CreateRecipe";
 import AllRecipes from "./components/allRecipes/AllRecipes";
 import GetStarted from "./components/getStarted/GetStarted";
-
-import AuthContext from "./contexts/authContext";
-import Path from "./components/Path";
-import { useState } from "react";
+import MyRecipes from "./components/myRecipes/MyRecipes";
 
 function App() {
+    const navigate = useNavigate()
     const [auth, setAuth] = useState({});
-    const loginSubmitHandler = (values) => {
-        console.log(values);
+
+    const loginSubmitHandler = async (values) => {
+        const result = await authService.login(values.email, values.password);
+        setAuth(result);
+        navigate(Path.MyRecipes);
     };
 
     return (
@@ -28,8 +34,15 @@ function App() {
                 <Routes>
                     <Route path={Path.Home} element={<Home />} />
                     <Route path={Path.Recipes} element={<AllRecipes />} />
-                    <Route path={Path.CreateRecipe} element={<CreateRecipe />} />
-                    <Route path={Path.DetailsRecipe} element={<DetailsRecipe />} />
+                    <Route path={Path.MyRecipes} element={<MyRecipes />} />
+                    <Route
+                        path={Path.CreateRecipe}
+                        element={<CreateRecipe />}
+                    />
+                    <Route
+                        path={Path.DetailsRecipe}
+                        element={<DetailsRecipe />}
+                    />
                     <Route path={Path.Contacts} element={<Contacts />} />
                     <Route path={Path.GetStarted} element={<GetStarted />} />
                 </Routes>
