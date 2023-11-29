@@ -8,6 +8,8 @@ import ContactMe from "./components/contactMe/ContactMe";
 import DetailsRecipe from "./components/detailsRecipe/DetailsRecipe";
 import CreateRecipe from "./components/CreateRecipe/CreateRecipe";
 import AllRecipes from "./components/AllRecipes/AllRecipes"
+import GetStarted from "./components/getStarted/GetStarted";
+
 import Path from "./components/Path";
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
         <Route path={Path.CreateRecipe} element={<CreateRecipe />} />
         <Route path={Path.DetailsRecipe} element={<DetailsRecipe />} />
         <Route path={Path.Contacts} element={<ContactMe />} />
+        <Route path={Path.GetStarted} element={<GetStarted />} />
       </Routes>
 
       <Footer />

@@ -6,7 +6,6 @@ import { useLocation } from "react-router-dom";
 import IntroSection from "./IntroSection";
 import Path from "../Path";
 
-
 export default function Header() {
     const location = useLocation();
 
@@ -39,12 +38,18 @@ export default function Header() {
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to={Path.Recipes}>
+                                    <Link
+                                        className="nav-link"
+                                        to={Path.Recipes}
+                                    >
                                         Recipes
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to={Path.Contacts}>
+                                    <Link
+                                        className="nav-link"
+                                        to={Path.Contacts}
+                                    >
                                         Contact Me
                                     </Link>
                                 </li>
@@ -57,8 +62,8 @@ export default function Header() {
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/login">
-                                        Login
+                                    <Link className="nav-link" to={Path.GetStarted}>
+                                        GetStarted
                                     </Link>
                                 </li>
                                 <li className="nav-item">
