@@ -3,7 +3,10 @@ import * as request from "../lib/request";
 const baseUrl = "http://localhost:3030/jsonstore/comments";
 
 export const getAllCommentsByRecipeId = async (recipeId) => {
-    const comments = await request.get(baseUrl + `?where=recipeId%3D%22${recipeId}%22`);
+    const query = new URLSearchParams({
+        where: `recipeId='${recipeId}'`,
+    })
+    const comments = await request.get(`${baseUrl}?${query}`);
     return Object.values(comments);
 }
 

@@ -19,7 +19,7 @@ export default function Login() {
         <div className="login">
             <form className="login-form" onSubmit={onSubmit}>
                 <div className="group">
-                    <label htmlFor="username" className="label">
+                    <label htmlFor="email-login" className="label">
                         Email
                     </label>
                     <input
@@ -30,6 +30,7 @@ export default function Login() {
                         placeholder="Enter your email"
                         onChange={onChange}
                         value={values[LoginFormKeys.Email]}
+                        autoComplete="on"
                     />
                 </div>
                 <div className="group">
