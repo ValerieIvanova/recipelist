@@ -120,7 +120,7 @@ export default function DetailsRecipe() {
                                 <YouMayAlsoLike />
                                 <hr className="invis1" />
                                 <div className="custombox clearfix">
-                                    <h4 className="small-title">3 Comments</h4>
+                                    <h4 className="small-title">{comments.length} Comments</h4>
                                     <div className="row">
                                         <div className="col-lg-12">
                                             <div className="comments-list">
