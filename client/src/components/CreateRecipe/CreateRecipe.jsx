@@ -41,7 +41,7 @@ export default function CreateRecipe() {
                     <label htmlFor="description">Description</label>
                     <textarea id="description" name="description" />
 
-                    <label htmlFor="recipe-img">Image</label>
+                    <label htmlFor="imageUrl">Image</label>
                     <input
                         type="text"
                         id="imageUrl"

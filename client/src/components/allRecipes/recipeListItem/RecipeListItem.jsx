@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 
 export default function RecipeListItem({
+    _ownerId,
     title,
     description,
     category,
-    ingredients,
-    popularity,
-    instructions,
     createdOn,
     imageUrl,
     _id,
 }) {
+
+
     return (
         <>
             <div className="blog-box row">
@@ -49,7 +49,7 @@ export default function RecipeListItem({
                     </small>
                     <small>
                         <a href="#" title="">
-                            by Matilda
+                            by {_ownerId}
                         </a>
                     </small>
                 </div>

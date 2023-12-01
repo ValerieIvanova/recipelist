@@ -6,6 +6,7 @@ export default function AsideBar() {
                     <h2 className="widget-title">Search</h2>
                     <form className="search-form">
                         <input
+                            id="search"
                             type="text"
                             className="form-control"
                             placeholder="Search on the site"
