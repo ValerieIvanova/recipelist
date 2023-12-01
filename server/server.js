@@ -1531,6 +1531,7 @@
     var seedData = {
         recipes: {
             "a8c0ded0-09b5-4c49-ac80-48e374f65a98": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 title: "Grilled Chicken Salad",
                 category: "Salad",
                 imageUrl:
@@ -1558,10 +1559,11 @@
                     "Top the salad with grilled chicken strips.",
                     "Drizzle balsamic vinaigrette dressing over the salad and toss gently to combine.",
                 ],
-                createdOn: "25.11.2023",
+                _createdOn: 1701431453792,
                 _id: "a8c0ded0-09b5-4c49-ac80-48e374f65a98",
             },
             "8f2d1c87-8e98-4150-82c2-c4db9133ac02": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 title: "Spaghetti Bolognese",
                 category: "Pasta",
                 imageUrl:
@@ -1591,10 +1593,11 @@
                     "Cook spaghetti according to package instructions.",
                     "Serve Bolognese sauce over cooked spaghetti, garnish with Parmesan cheese and fresh parsley.",
                 ],
-                createdOn: "25.11.2023",
+                _createdOn: 1701429406704,
                 _id: "8f2d1c87-8e98-4150-82c2-c4db9133ac02",
             },
             "c8a1979f-92ba-4a25-9d0b-8be129c51721": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 title: "Avocado Toast",
                 category: "Breakfast",
                 imageUrl:
@@ -1614,10 +1617,11 @@
                     "Spread the mashed avocado onto toasted bread slices.",
                     "Top with desired toppings like cherry tomatoes, red pepper flakes, or sesame seeds.",
                 ],
-                createdOn: "25.11.2023",
+                _createdOn: 1701429406704,
                 _id: "c8a1979f-92ba-4a25-9d0b-8be129c51721",
             },
             "11abdef3-6272-4cf0-8723-acc187438b92": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 title: "Vegan Buddha Bowl",
                 category: "Vegan",
                 imageUrl:
@@ -1642,10 +1646,11 @@
                     "In a small bowl, whisk together hummus, tahini, lemon juice, olive oil, salt, and pepper.",
                     "Drizzle the dressing over the bowl before serving.",
                 ],
-                createdOn: "25.11.2023",
+                _createdOn: 1701429406704,
                 _id: "11abdef3-6272-4cf0-8723-acc187438b92",
             },
             "eb727d21-284a-47ff-a374-3bb36375bd21": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 title: "Mango Chicken Curry",
                 category: "Curry",
                 imageUrl:
@@ -1673,7 +1678,7 @@
                     "Season with salt and pepper.",
                     "Garnish with fresh cilantro before serving.",
                 ],
-                createdOn: "25.11.2023",
+                _createdOn: 1701429406704,
                 _id: "eb727d21-284a-47ff-a374-3bb36375bd21",
             },
         },
