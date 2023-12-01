@@ -24,7 +24,7 @@ export default function Register() {
         <div className="sign-up-form">
             <form className="sign-up-form" onSubmit={onSubmit}>
                 <div className="group">
-                    <label htmlFor="username-create" className="label">
+                    <label htmlFor="email-create" className="label">
                         Email
                     </label>
                     <input
@@ -35,6 +35,7 @@ export default function Register() {
                         name="email"
                         onChange={onChange}
                         values={values[RegisterFormKeys.Email]}
+                        autoComplete="on"
                     />
                 </div>
                 <div className="group">
@@ -49,6 +50,7 @@ export default function Register() {
                         name="username"
                         onChange={onChange}
                         values={values[RegisterFormKeys.Username]}
+                        autoComplete="on"
                     />
                 </div>
                 <div className="group">

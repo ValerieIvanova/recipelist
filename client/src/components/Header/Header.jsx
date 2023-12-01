@@ -58,6 +58,7 @@ export default function Header() {
                                         Contacts
                                     </Link>
                                 </li>
+                                
                                 {isAuthenticated && (
                                     <>
                                         <li className="nav-item">
@@ -84,7 +85,7 @@ export default function Header() {
                                         <li className="nav-item">
                                             <Link
                                                 className="nav-link"
-                                                to="/logout"
+                                                to={Path.Logout}
                                             >
                                                 Logout
                                             </Link>
