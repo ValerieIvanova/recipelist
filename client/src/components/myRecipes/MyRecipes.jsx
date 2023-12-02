@@ -1,15 +1,19 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import * as recipeService from "../../services/recipeService";
 
 import AsideBar from "../asideBar/AsideBar";
-import RecipeListItem from "../AllRecipes/recipeListItem/RecipeListItem";
+import RecipeListItem from "../allRecipes/recipeListItem/RecipeListItem";
+
+import AuthContext from "../../contexts/authContext";
+
 
 export default function MyRecipes() {
     const [recipes, setRecipes] = useState([]);
+    const { userId } = useContext(AuthContext);
 
     useEffect(() => {
-        recipeService.getAll().then((result) => setRecipes(result));
+        recipeService.getByOwnerId(userId).then((result) => setRecipes(result));
     }, []);
 
     return (

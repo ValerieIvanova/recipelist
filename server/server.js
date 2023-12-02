@@ -1531,6 +1531,7 @@
     var seedData = {
         recipes: {
             "a8c0ded0-09b5-4c49-ac80-48e374f65a98": {
+                owner: "Peter",
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 title: "Grilled Chicken Salad",
                 category: "Salad",
@@ -1563,6 +1564,7 @@
                 _id: "a8c0ded0-09b5-4c49-ac80-48e374f65a98",
             },
             "8f2d1c87-8e98-4150-82c2-c4db9133ac02": {
+                owner: "Peter",
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 title: "Spaghetti Bolognese",
                 category: "Pasta",
@@ -1597,6 +1599,7 @@
                 _id: "8f2d1c87-8e98-4150-82c2-c4db9133ac02",
             },
             "c8a1979f-92ba-4a25-9d0b-8be129c51721": {
+                owner: "Peter",
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 title: "Avocado Toast",
                 category: "Breakfast",
@@ -1621,6 +1624,7 @@
                 _id: "c8a1979f-92ba-4a25-9d0b-8be129c51721",
             },
             "11abdef3-6272-4cf0-8723-acc187438b92": {
+                owner: "Peter",
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 title: "Vegan Buddha Bowl",
                 category: "Vegan",
@@ -1650,6 +1654,7 @@
                 _id: "11abdef3-6272-4cf0-8723-acc187438b92",
             },
             "eb727d21-284a-47ff-a374-3bb36375bd21": {
+                owner: "Peter",
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 title: "Mango Chicken Curry",
                 category: "Curry",

@@ -2,17 +2,24 @@ import * as request from "../lib/request";
 
 const baseURL = "http://localhost:3030/data/recipes";
 
+import { useContext } from "react";
+import AuthContext from "../contexts/authContext";
+
 
 export const getAll = async () => {
     const result = await request.get(baseURL);
     return result
 };
 
-export const create = async (recipeData) => {
-    const currentDate = new Date().toLocaleDateString('de-DE');
-    const dataWithDate = { ...recipeData, createdOn: currentDate };
+export const getByOwnerId = async (ownerId) => {
+    const result = await request.get(`${baseURL}?where=_ownerId%3D%22${ownerId}%22&sortBy=_createdOn%20desc`);
+    return result
+}
 
-    const result = await request.post(baseURL, dataWithDate);
+export const create = async (recipeData, username) => {
+    const dataWithOwner = { ...recipeData, owner: username };
+
+    const result = await request.post(baseURL, dataWithOwner);
 
     return result;
 };
