@@ -1,19 +1,19 @@
 import { Link } from "react-router-dom";
+import formatDate from '../../../utils/formattedDate';
+import ratingDisplay from "../../../utils/ratingDisplay";
 
 export default function RecipeListItem({
     owner,
     title,
     description,
     category,
+    popularity,
     _createdOn,
     imageUrl,
     _id,
 }) {
-    const formattedDate = new Date(_createdOn).toLocaleDateString("en-GB", {
-        day: "numeric",
-        month: "short",
-        year: "numeric",
-    })
+    const createdOnFormatted = formatDate(_createdOn);
+    const rating = ratingDisplay(popularity);
 
     return (
         <>
@@ -29,11 +29,7 @@ export default function RecipeListItem({
 
                 <div className="blog-meta big-meta col-md-8">
                     <div className="rating">
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
+                        {rating}
                     </div>
                     <h4>
                         <Link to={`/recipes/${_id}`} title="">
@@ -48,7 +44,7 @@ export default function RecipeListItem({
                     </small>
                     <small>
                         <a href="#" title="">
-                            {formattedDate}
+                            {createdOnFormatted}
                         </a>
                     </small>
                     <small>

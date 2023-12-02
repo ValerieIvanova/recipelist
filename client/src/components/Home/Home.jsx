@@ -1,6 +1,15 @@
 import RecipeItemGrid from "./RecipeItemGrid";
+import { useState, useEffect } from "react";
+
+import * as recipeService from "../../services/recipeService";
 
 export default function Home() {
+    const [recipes, setRecipes] = useState([]);
+
+    useEffect(() => {
+        recipeService.getByPopularity().then((result) => setRecipes(result));
+    }, []);
+
     return (
         <section className="section lb text-muted">
             <h2 style={{ textAlign: "center", marginBottom: "40px", fontWeight: "lighter" }}>
@@ -9,19 +18,9 @@ export default function Home() {
             </h2>
             <div className="container">
                 <div className="row grid-style">
-                    <RecipeItemGrid />
-                    <RecipeItemGrid />
-                    <RecipeItemGrid />
-                    <RecipeItemGrid />
-                </div>
-
-                <hr className="invis"></hr>
-
-                <div className="row grid-style">
-                    <RecipeItemGrid />
-                    <RecipeItemGrid />
-                    <RecipeItemGrid />
-                    <RecipeItemGrid />
+                    {recipes.map((recipe) => (
+                        <RecipeItemGrid key={recipe._id} {...recipe} />
+                    ))}
                 </div>
 
                 <hr className="invis"></hr>

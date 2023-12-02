@@ -15,7 +15,7 @@ export default function DetailsRecipe() {
     const { recipeId } = useParams();
 
     useEffect(() => {
-        recipeService.getRecipeById(recipeId).then(setRecipe);
+        recipeService.getById(recipeId).then(setRecipe);
         commentService.getAllCommentsByRecipeId(recipeId).then(setComments);
     }, [recipeId]);
 
