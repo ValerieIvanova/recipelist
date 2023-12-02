@@ -3,14 +3,17 @@ import "./createRecipe.css";
 import { useNavigate } from "react-router-dom";
 
 import * as recipeService from "../../services/recipeService";
+import { useContext } from "react";
+import AuthContext from "../../contexts/authContext";
 
 export default function CreateRecipe() {
     const navigate = useNavigate();
+    const { username } = useContext(AuthContext)
     const addRecipeSubmitHandler = async (e) => {
         e.preventDefault();
         const recipeData = Object.fromEntries(new FormData(e.currentTarget));
         try {
-            await recipeService.create(recipeData);
+            await recipeService.create(recipeData, username);
             navigate("/recipes");
         } catch (error) {
             console.log(error);

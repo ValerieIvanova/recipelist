@@ -48,6 +48,7 @@ function App() {
         loginSubmitHandler,
         registerSubmitHandler,
         logoutHandler,
+        userId: auth._id,
         username: auth.username,
         email: auth.email,
         isAuthenticated: !!auth.accessToken,

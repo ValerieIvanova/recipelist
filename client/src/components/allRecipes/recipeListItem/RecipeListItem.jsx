@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
 
 export default function RecipeListItem({
-    _ownerId,
+    owner,
     title,
     description,
     category,
-    createdOn,
+    _createdOn,
     imageUrl,
     _id,
 }) {
-
+    const formattedDate = new Date(_createdOn).toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+    })
 
     return (
         <>
@@ -44,12 +48,12 @@ export default function RecipeListItem({
                     </small>
                     <small>
                         <a href="#" title="">
-                            {createdOn}
+                            {formattedDate}
                         </a>
                     </small>
                     <small>
                         <a href="#" title="">
-                            by {_ownerId}
+                            by {owner}
                         </a>
                     </small>
                 </div>
