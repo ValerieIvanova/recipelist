@@ -56,11 +56,19 @@ p {
 .blog-meta .rating {
     display: block;
     margin-top: 1rem;
+    font-weight: 100;
+    font-size: 1rem;
 }
 
 .blog-box {
     padding: 1rem;
     background-color: #ffffff;
+}
+
+#wrapper > section.section.lb.text-muted > div.container > div > div> div{
+    box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.5);
+    margin-bottom: 6%;
+    height: 450px;
 }
 
 .blog-meta.big-meta h4 {
