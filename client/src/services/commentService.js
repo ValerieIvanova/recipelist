@@ -1,6 +1,6 @@
 import * as request from "../lib/request";
 
-const baseUrl = "http://localhost:3030/jsonstore/comments";
+const baseUrl = "http://localhost:3030/data/comments";
 
 export const getAllCommentsByRecipeId = async (recipeId) => {
     const query = new URLSearchParams({
