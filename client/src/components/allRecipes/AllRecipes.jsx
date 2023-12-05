@@ -1,5 +1,5 @@
-import AsideBar from "../asideBar/AsideBar"
-import RecipeListItem from "./recipeListItem/RecipeListItem"
+import AsideBar from "../asideBar/AsideBar";
+import RecipeListItem from "./recipeListItem/RecipeListItem";
 
 import { useEffect, useState } from "react";
 
@@ -20,8 +20,11 @@ export default function AllRecipes() {
                         <div className="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                             <div className="page-wrapper">
                                 <div className="blog-list clearfix">
-                                    {recipes.map(recipe => (
-                                        <RecipeListItem key={recipe._id} {...recipe} />
+                                    {recipes.map((recipe) => (
+                                        <RecipeListItem
+                                            key={recipe._id}
+                                            {...recipe}
+                                        />
                                     ))}
                                 </div>
                             </div>

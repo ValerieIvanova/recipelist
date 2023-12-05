@@ -12,9 +12,14 @@ export default function Home() {
 
     return (
         <section className="section lb text-muted">
-            <h2 style={{ textAlign: "center", marginBottom: "40px", fontWeight: "lighter" }}>
-                <i className="fa fa-star " /> Most popular
-                recipes
+            <h2
+                style={{
+                    textAlign: "center",
+                    marginBottom: "40px",
+                    fontWeight: "lighter",
+                }}
+            >
+                <i className="fa fa-star " /> Most popular recipes
             </h2>
             <div className="container">
                 <div className="row grid-style">

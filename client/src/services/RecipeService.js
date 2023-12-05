@@ -31,20 +31,3 @@ export const getByPopularity = async () => {
     const result = await request.get(`${baseURL}?sortBy=popularity%20desc`);
     return result
 }
-// export const update = async (id, recipeData) => {
-//     const response = await fetch(`${baseURL}/recipes/${id}`, {
-//         method: "put",
-//         headers: {
-//             "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(recipeData),
-//     });
-//     const result = await response.json();
-// };
-
-// export const deleteById = async (id) => {
-//     const response = await fetch(`${baseURL}/recipes/${id}`, {
-//         method: "delete",
-//     });
-//     const result = await response.json();
-// };
