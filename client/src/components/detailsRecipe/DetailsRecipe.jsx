@@ -1,8 +1,8 @@
 import "./DetailsRecipe.css";
 
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-
+import { useContext, useEffect, useState } from "react";
+import AuthContext from "../../contexts/authContext";
 import * as recipeService from "../../services/recipeService";
 import * as commentService from "../../services/commentService";
 
@@ -10,13 +10,14 @@ import AsideBar from "../asideBar/AsideBar";
 import YouMayAlsoLike from "./youMayAlsoLike/YouMayAlsoLike";
 
 export default function DetailsRecipe() {
+    const { username } = useContext(AuthContext);
     const [recipe, setRecipe] = useState({});
     const [comments, setComments] = useState([]);
     const { recipeId } = useParams();
 
     useEffect(() => {
         recipeService.getById(recipeId).then(setRecipe);
-        commentService.getAllCommentsByRecipeId(recipeId).then(setComments);
+        commentService.getAll(recipeId).then(setComments);
     }, [recipeId]);
 
     const addCommentHandler = async (e) => {
@@ -24,10 +25,13 @@ export default function DetailsRecipe() {
         const formData = new FormData(e.currentTarget);
         const newComment = await commentService.create(
             recipeId,
-            formData.get("username"),
             formData.get("comment")
         );
-        setComments((state) => [...state, newComment]);
+
+        setComments((state) => [
+            ...state,
+            { ...newComment, owner: { username } },
+        ]);
     };
 
     return (
@@ -120,15 +124,17 @@ export default function DetailsRecipe() {
                                 <YouMayAlsoLike />
                                 <hr className="invis1" />
                                 <div className="custombox clearfix">
-                                    <h4 className="small-title">{comments.length} Comments</h4>
+                                    <h4 className="small-title">
+                                        {comments.length} Comments
+                                    </h4>
                                     <div className="row">
                                         <div className="col-lg-12">
                                             <div className="comments-list">
                                                 {comments.map(
                                                     ({
                                                         _id,
-                                                        username,
-                                                        text,
+                                                        content,
+                                                        owner: { username },
                                                     }) => (
                                                         <div
                                                             className="media"
@@ -152,7 +158,7 @@ export default function DetailsRecipe() {
                                                                         ago
                                                                     </small>
                                                                 </h4>
-                                                                <p>{text}</p>
+                                                                <p>{content}</p>
                                                             </div>
                                                         </div>
                                                     )
@@ -175,12 +181,6 @@ export default function DetailsRecipe() {
                                                 className="form-wrapper"
                                                 onSubmit={addCommentHandler}
                                             >
-                                                <input
-                                                    type="text"
-                                                    name="username"
-                                                    className="form-control"
-                                                    placeholder="Your name"
-                                                />
                                                 <textarea
                                                     name="comment"
                                                     className="form-control"

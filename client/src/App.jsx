@@ -68,8 +68,8 @@ function App() {
                         element={<CreateRecipe />}
                     />
                     <Route
-                        path={Path.DetailsRecipe}
-                        element={<DetailsRecipe />}
+                        path={Path.DetailsRecipe(':recipeId')}
+                        element={<DetailsRecipe  />}
                     />
                     <Route path={Path.Contacts} element={<Contacts />} />
                     <Route path={Path.GetStarted} element={<GetStarted />} />

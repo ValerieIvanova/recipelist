@@ -1,9 +1,10 @@
 import formatDate from "../../utils/formattedDate";
 import ratingDisplay from "../../utils/ratingDisplay";
 
-import popularityArray from "../../utils/ratingDisplay";
+import Path from '../paths'
 
 export default function RecipeItemGrid({
+    _id,
     title,
     description,
     popularity,
@@ -18,7 +19,7 @@ export default function RecipeItemGrid({
         <div className="col-lg-3 col-md-6 col-sm-12 col-xs-12">
             <div className="blog-box">
                 <div className="post-media">
-                    <a href="recipe/:recipeId" title="">
+                    <a href={Path.DetailsRecipe(_id)} title="">
                         <img src={imageUrl} alt="" className="img-fluid" />
                         <div className="hovereffect"></div>
                     </a>
@@ -29,13 +30,13 @@ export default function RecipeItemGrid({
                         {rating}
                     </div>
                     <h4>
-                        <a href="/recipe1" title="">
+                        <a href={Path.DetailsRecipe(_id)} title="">
                             {title}
                         </a>
                     </h4>
                     <p>{description}</p>
                     <small>
-                        <a href="/recipe1" title="">
+                        <a href={Path.DetailsRecipe(_id)} title="">
                             {createdOnFormatted}
                         </a>
                     </small>

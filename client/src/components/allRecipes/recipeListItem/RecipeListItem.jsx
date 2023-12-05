@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import formatDate from '../../../utils/formattedDate';
 import ratingDisplay from "../../../utils/ratingDisplay";
 
+import Path from "../../paths"
+
 export default function RecipeListItem({
     owner,
     title,
@@ -20,7 +22,7 @@ export default function RecipeListItem({
             <div className="blog-box row">
                 <div className="col-md-4">
                     <div className="post-media">
-                        <Link to={`/recipes/${_id}`} title="">
+                        <Link to={Path.DetailsRecipe(_id)} title="">
                             <img src={imageUrl} alt="" className="img-fluid" />
                             <div className="hovereffect"></div>
                         </Link>
@@ -32,7 +34,7 @@ export default function RecipeListItem({
                         {rating}
                     </div>
                     <h4>
-                        <Link to={`/recipes/${_id}`} title="">
+                        <Link to={Path.DetailsRecipe(_id)} title="">
                             {title}
                         </Link>
                     </h4>

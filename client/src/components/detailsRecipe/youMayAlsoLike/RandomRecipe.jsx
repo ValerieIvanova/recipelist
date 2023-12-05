@@ -1,3 +1,5 @@
+import Path from "../../paths"
+
 export default function RandomRecipe({
     _id,
     title,
@@ -9,7 +11,7 @@ export default function RandomRecipe({
         <div className="col-lg-6">
             <div className="blog-box">
                 <div className="post-media">
-                    <a href={`/recipes/${_id}`} title="">
+                    <a href={Path.DetailsRecipe(_id)} title="">
                         <img
                             src={imageUrl}
                             alt=""
@@ -22,7 +24,7 @@ export default function RandomRecipe({
                 </div>
                 <div className="blog-meta">
                     <h4>
-                        <a href={`/recipes/${_id}`} title="">
+                        <a href={Path.DetailsRecipe(_id)}title="">
                             {title}
                         </a>
                     </h4>
