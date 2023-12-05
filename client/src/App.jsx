@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 
 import * as authService from "./services/authService";
-import AuthContext from "./contexts/authContext";
+import { AuthProvider } from "./contexts/authContext";
 import Path from "./components/paths";
 
 import Header from "./components/Header/Header";
@@ -18,31 +18,35 @@ import MyRecipes from "./components/myRecipes/MyRecipes";
 import Logout from "./components/logout/Logout";
 
 function App() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [auth, setAuth] = useState(() => {
-        localStorage.removeItem('accessToken');
-        return {}
+        localStorage.removeItem("accessToken");
+        return {};
     });
 
     const loginSubmitHandler = async (values) => {
         const result = await authService.login(values.email, values.password);
         setAuth(result);
-        localStorage.setItem('accessToken', result.accessToken);
+        localStorage.setItem("accessToken", result.accessToken);
         navigate(Path.Home);
     };
 
     const registerSubmitHandler = async (values) => {
-        const result = await authService.register(values.email, values.username, values.password);
+        const result = await authService.register(
+            values.email,
+            values.username,
+            values.password
+        );
         setAuth(result);
-        localStorage.setItem('accessToken', result.accessToken);
+        localStorage.setItem("accessToken", result.accessToken);
         navigate(Path.Home);
-    }
+    };
 
     const logoutHandler = () => {
         setAuth({});
-        localStorage.removeItem('accessToken');
+        localStorage.removeItem("accessToken");
         navigate(Path.Home);
-    }
+    };
 
     const values = {
         loginSubmitHandler,
@@ -52,10 +56,10 @@ function App() {
         username: auth.username,
         email: auth.email,
         isAuthenticated: !!auth.accessToken,
-    }
+    };
 
     return (
-        <AuthContext.Provider value={values}>
+        <AuthProvider value={values}>
             <div id="wrapper">
                 <Header />
 
@@ -68,8 +72,8 @@ function App() {
                         element={<CreateRecipe />}
                     />
                     <Route
-                        path={Path.DetailsRecipe(':recipeId')}
-                        element={<DetailsRecipe  />}
+                        path={Path.DetailsRecipe(":recipeId")}
+                        element={<DetailsRecipe />}
                     />
                     <Route path={Path.Contacts} element={<Contacts />} />
                     <Route path={Path.GetStarted} element={<GetStarted />} />
@@ -80,7 +84,7 @@ function App() {
 
                 <ScrollToTop />
             </div>
-        </AuthContext.Provider>
+        </AuthProvider>
     );
 }
 
