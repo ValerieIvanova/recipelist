@@ -8,12 +8,15 @@ import * as commentService from "../../services/commentService";
 
 import AsideBar from "../asideBar/AsideBar";
 import YouMayAlsoLike from "./youMayAlsoLike/YouMayAlsoLike";
+import formatDate from "../../utils/formattedDate";
 
 export default function DetailsRecipe() {
     const { username } = useContext(AuthContext);
     const [recipe, setRecipe] = useState({});
     const [comments, setComments] = useState([]);
     const { recipeId } = useParams();
+    const createdOn = formatDate(recipe._createdOn);
+
 
     useEffect(() => {
         recipeService.getById(recipeId).then(setRecipe);
@@ -59,7 +62,7 @@ export default function DetailsRecipe() {
                                     <div className="blog-meta big-meta">
                                         <small>
                                             <a href="#" title="">
-                                                {recipe.createdOn}
+                                                {createdOn}
                                             </a>
                                         </small>
                                         <small>

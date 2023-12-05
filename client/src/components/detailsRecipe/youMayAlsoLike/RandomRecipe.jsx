@@ -1,22 +1,21 @@
-import Path from "../../paths"
+import Path from "../../paths";
+import formatDate from "../../../utils/formattedDate";
 
 export default function RandomRecipe({
     _id,
     title,
     imageUrl,
     category,
-    createdOn,
+    _createdOn,
 }) {
+    const createdOn = formatDate(_createdOn);
+
     return (
         <div className="col-lg-6">
             <div className="blog-box">
                 <div className="post-media">
                     <a href={Path.DetailsRecipe(_id)} title="">
-                        <img
-                            src={imageUrl}
-                            alt=""
-                            className="img-fluid"
-                        />
+                        <img src={imageUrl} alt="" className="img-fluid" />
                         <div className="hovereffect">
                             <span className="" />
                         </div>
@@ -24,7 +23,7 @@ export default function RandomRecipe({
                 </div>
                 <div className="blog-meta">
                     <h4>
-                        <a href={Path.DetailsRecipe(_id)}title="">
+                        <a href={Path.DetailsRecipe(_id)} title="">
                             {title}
                         </a>
                     </h4>
