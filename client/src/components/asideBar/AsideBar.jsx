@@ -1,4 +1,16 @@
+import { useState, useEffect } from "react";
+
+import * as recipeService from "../../services/recipeService";
+
+import RecentPostsItem from "./recentPostsItem.jsx/RecentPostsItem";
+
 export default function AsideBar() {
+    const [recipes, setRecipes] = useState([]);
+
+    useEffect(() => {
+        recipeService.getAll().then((result) => setRecipes(result));
+    }, []);
+
     return (
         <div className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
             <div className="sidebar">
@@ -18,60 +30,14 @@ export default function AsideBar() {
                     <h2 className="widget-title">Recent Posts</h2>
                     <div className="blog-list-widget">
                         <div className="list-group">
-                            <a
-                                href="single.html"
-                                className="list-group-item list-group-item-action flex-column align-items-start"
-                            >
-                                <div className="w-100 justify-content-between">
-                                    <img
-                                        src="/upload/blog_square_14.jpg"
-                                        alt=""
-                                        className="img-fluid float-left"
-                                    />
-                                    <h5 className="mb-1">
-                                        5 Beautiful buildings you need to before
-                                        dying
-                                    </h5>
-                                    <small>12 Jan, 2016</small>
-                                </div>
-                            </a>
 
-                            <a
-                                href="single.html"
-                                className="list-group-item list-group-item-action flex-column align-items-start"
-                            >
-                                <div className="w-100 justify-content-between">
-                                    <img
-                                        src="/upload/blog_square_12.jpg"
-                                        alt=""
-                                        className="img-fluid float-left"
-                                    />
-                                    <h5 className="mb-1">
-                                        Let's make an introduction for creative
-                                        life
-                                    </h5>
-                                    <small>11 Jan, 2016</small>
-                                </div>
-                            </a>
+                            {recipes.map((recipe) => (
+                                <RecentPostsItem
+                                    key={recipe._id}
+                                    {...recipe}
+                                />
+                            ))}
 
-                            <a
-                                href="single.html"
-                                className="list-group-item list-group-item-action flex-column align-items-start"
-                            >
-                                <div className="w-100 last-item justify-content-between">
-                                    <img
-                                        src="/upload/blog_square_11.jpg"
-                                        alt=""
-                                        className="img-fluid float-left"
-                                    />
-                                    <h5 className="mb-1">
-                                        Did you see the most beautiful sea in
-                                        the world?
-                                    </h5>
-                                    <small>07 Jan, 2016 </small>
-                                    <small>by Matilda</small>
-                                </div>
-                            </a>
                         </div>
                     </div>
                 </div>
