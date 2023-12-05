@@ -5,30 +5,28 @@ import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../contexts/authContext";
 import * as recipeService from "../../services/recipeService";
 import * as commentService from "../../services/commentService";
+import useForm from "../../hooks/useForm";
 
 import AsideBar from "../asideBar/AsideBar";
 import YouMayAlsoLike from "./youMayAlsoLike/YouMayAlsoLike";
 import formatDate from "../../utils/formattedDate";
 
 export default function DetailsRecipe() {
-    const { username } = useContext(AuthContext);
+    const { username, userId } = useContext(AuthContext);
     const [recipe, setRecipe] = useState({});
     const [comments, setComments] = useState([]);
     const { recipeId } = useParams();
     const createdOn = formatDate(recipe._createdOn);
-
 
     useEffect(() => {
         recipeService.getById(recipeId).then(setRecipe);
         commentService.getAll(recipeId).then(setComments);
     }, [recipeId]);
 
-    const addCommentHandler = async (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget);
+    const addCommentHandler = async (values) => {
         const newComment = await commentService.create(
             recipeId,
-            formData.get("comment")
+            values.comment
         );
 
         setComments((state) => [
@@ -36,6 +34,12 @@ export default function DetailsRecipe() {
             { ...newComment, owner: { username } },
         ]);
     };
+
+    const { values, onChange, onSubmit } = useForm(addCommentHandler, {
+        comment: "",
+    });
+
+    const isOwner = userId === recipe._ownerId;
 
     return (
         <>
@@ -110,7 +114,24 @@ export default function DetailsRecipe() {
                                             </li>
                                         </ul>
                                     </div>
+                                    {isOwner && (
+                                        <div className="buttons">
+                                            <button
+                                                href="#"
+                                                className="btn btn-primary"
+                                            >
+                                                Edit
+                                            </button>
+                                            <button
+                                                href="#"
+                                                className="btn btn-primary"
+                                            >
+                                                Delete
+                                            </button>
+                                        </div>
+                                    )}
                                 </div>
+
                                 <div className="blog-content">
                                     <p>{recipe.description}</p>
                                     <h3>
@@ -182,12 +203,14 @@ export default function DetailsRecipe() {
                                         <div className="col-lg-12">
                                             <form
                                                 className="form-wrapper"
-                                                onSubmit={addCommentHandler}
+                                                onSubmit={onSubmit}
                                             >
                                                 <textarea
                                                     name="comment"
                                                     className="form-control"
                                                     placeholder="Your comment"
+                                                    value={values.comment}
+                                                    onChange={onChange}
                                                 />
                                                 <button
                                                     type="submit"
