@@ -9,7 +9,9 @@ export default function AllRecipes() {
     const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
-        recipeService.getAll().then((result) => setRecipes(result));
+        recipeService.getAll()
+            .then((result) => setRecipes(result))
+            .catch((error) => console.log(error));
     }, []);
 
     return (
