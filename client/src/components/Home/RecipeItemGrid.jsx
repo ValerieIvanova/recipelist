@@ -1,7 +1,9 @@
 import formatDate from "../../utils/formattedDate";
 import ratingDisplay from "../../utils/ratingDisplay";
 
-import Path from '../paths'
+import { Link } from "react-router-dom";
+
+import Path from "../paths";
 
 export default function RecipeItemGrid({
     _id,
@@ -19,26 +21,24 @@ export default function RecipeItemGrid({
         <div className="col-lg-3 col-md-6 col-sm-12 col-xs-12">
             <div className="blog-box">
                 <div className="post-media">
-                    <a href={Path.DetailsRecipe(_id)} title="">
+                    <Link to={Path.DetailsRecipe(_id)} title="">
                         <img src={imageUrl} alt="" className="img-fluid" />
                         <div className="hovereffect"></div>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="blog-meta big-meta">
-                    <div className="rating">
-                        {rating}
-                    </div>
+                    <div className="rating">{rating}</div>
                     <h4>
-                        <a href={Path.DetailsRecipe(_id)} title="">
+                        <Link to={Path.DetailsRecipe(_id)} title="">
                             {title}
-                        </a>
+                        </Link>
                     </h4>
                     <p>{description}</p>
                     <small>
-                        <a href={Path.DetailsRecipe(_id)} title="">
+                        <Link to={Path.DetailsRecipe(_id)} title="">
                             {createdOnFormatted}
-                        </a>
+                        </Link>
                     </small>
                     <small>
                         <a href="#" title="">
