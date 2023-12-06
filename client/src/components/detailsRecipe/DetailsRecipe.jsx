@@ -1,6 +1,6 @@
 import "./DetailsRecipe.css";
 
-import { useParams } from "react-router-dom";
+import { useParams , Link} from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../contexts/authContext";
 import * as recipeService from "../../services/recipeService";
@@ -10,6 +10,7 @@ import useForm from "../../hooks/useForm";
 import AsideBar from "../asideBar/AsideBar";
 import YouMayAlsoLike from "./youMayAlsoLike/YouMayAlsoLike";
 import formatDate from "../../utils/formattedDate";
+import Path from'../paths'
 
 export default function DetailsRecipe() {
     const { username, userId } = useContext(AuthContext);
@@ -116,18 +117,18 @@ export default function DetailsRecipe() {
                                     </div>
                                     {isOwner && (
                                         <div className="buttons">
-                                            <button
-                                                href="#"
+                                            <Link
+                                                to={Path.EditRecipe}
                                                 className="btn btn-primary"
                                             >
                                                 Edit
-                                            </button>
-                                            <button
-                                                href="#"
+                                            </Link>
+                                            <Link
+                                                to={Path.DeleteRecipe}
                                                 className="btn btn-primary"
                                             >
                                                 Delete
-                                            </button>
+                                            </Link>
                                         </div>
                                     )}
                                 </div>
