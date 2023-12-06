@@ -8,7 +8,7 @@ export default function AsideBar() {
     const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
-        recipeService.getAll().then((result) => setRecipes(result));
+        recipeService.getLatestFive().then((result) => setRecipes(result));
     }, []);
 
     return (

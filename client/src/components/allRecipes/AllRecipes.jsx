@@ -9,7 +9,7 @@ export default function AllRecipes() {
     const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
-        recipeService.getAll()
+        recipeService.getByPopularity()
             .then((result) => setRecipes(result))
             .catch((error) => console.log(error));
     }, []);

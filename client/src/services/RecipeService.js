@@ -33,6 +33,11 @@ export const getByPopularity = async () => {
     return result
 }
 
+export const getLatestFive = async () => {
+    const result = await request.get(`${baseURL}?offset=0&pageSize=5&sortBy=_createdOn%20desc`);
+    return result
+}
+
 export const remove = async (recipeId) => {
     const result = await request.remove(`${baseURL}/${recipeId}`);
     return result

@@ -1,7 +1,10 @@
+import Path from '../paths';
+
 import RecipeItemGrid from "./RecipeItemGrid";
 import { useState, useEffect } from "react";
 
 import * as recipeService from "../../services/recipeService";
+import { Link } from 'react-router-dom';
 
 export default function Home() {
     const [recipes, setRecipes] = useState([]);
@@ -23,40 +26,16 @@ export default function Home() {
             </h2>
             <div className="container">
                 <div className="row grid-style">
-                    {recipes.map((recipe) => (
+                    {recipes.slice(0, 8).map((recipe) => (
                         <RecipeItemGrid key={recipe._id} {...recipe} />
                     ))}
                 </div>
-
-                <hr className="invis"></hr>
+                <hr className="invis" />
             </div>
-            <div className="row">
-                <div className="col-md-12 text-center">
-                    <nav aria-label="Page navigation">
-                        <ul className="pagination justify-content-center">
-                            <li className="page-item">
-                                <a className="page-link" href="#">
-                                    1
-                                </a>
-                            </li>
-                            <li className="page-item">
-                                <a className="page-link" href="#">
-                                    2
-                                </a>
-                            </li>
-                            <li className="page-item">
-                                <a className="page-link" href="#">
-                                    3
-                                </a>
-                            </li>
-                            <li className="page-item">
-                                <a className="page-link" href="#">
-                                    Next
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+            <div className='text-center'>
+            <Link to={Path.Recipes} className="see-all-btn btn btn-primary btn-lg ">
+                See all
+            </Link>
             </div>
         </section>
     );
