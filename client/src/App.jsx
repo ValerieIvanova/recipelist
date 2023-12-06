@@ -10,6 +10,7 @@ import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import Contacts from "./components/contacts/Contacts";
 import DetailsRecipe from "./components/detailsRecipe/DetailsRecipe";
 import CreateRecipe from "./components/createRecipe/CreateRecipe";
+import EditRecipe from "./components/editRecipe/EditRecipe";
 import AllRecipes from "./components/allRecipes/AllRecipes";
 import GetStarted from "./components/getStarted/GetStarted";
 import MyRecipes from "./components/myRecipes/MyRecipes";
@@ -26,6 +27,7 @@ function App() {
                     <Route element={<AuthGuard />}>
                         <Route path={Path.MyRecipes} element={<MyRecipes />} />
                         <Route path={Path.CreateRecipe} element={<CreateRecipe />} />
+                        <Route path={Path.EditRecipe(":recipeId")} element={<EditRecipe />} />
                         <Route path={Path.Logout} element={<Logout />} />
                     </Route>
 

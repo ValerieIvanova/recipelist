@@ -10,7 +10,7 @@ export const getAll = async () => {
 
 
 export const create = async (recipeData, username) => {
-    const dataWithOwner = { ...recipeData, owner: username, popularity: 0 };
+    const dataWithOwner = { ...recipeData, _owner: username, popularity: 0 };
     
     const result = await request.post(baseURL, dataWithOwner);
     
@@ -34,5 +34,10 @@ export const getByPopularity = async () => {
 
 export const remove = async (recipeId) => {
     const result = await request.remove(`${baseURL}/${recipeId}`);
+    return result
+}
+
+export const edit = async (recipeId, values) => {
+    const result = await request.put(`${baseURL}/${recipeId}`, values);
     return result
 }

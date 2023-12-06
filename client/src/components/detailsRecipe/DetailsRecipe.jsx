@@ -128,7 +128,7 @@ export default function DetailsRecipe() {
                                     {isOwner && (
                                         <div className="buttons">
                                             <Link
-                                                to={Path.EditRecipe}
+                                                to={Path.EditRecipe(recipeId)}
                                                 className="btn btn-primary"
                                             >
                                                 Edit
