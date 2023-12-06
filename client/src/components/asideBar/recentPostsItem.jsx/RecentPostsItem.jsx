@@ -1,3 +1,5 @@
+import './recentPostItem.css'
+
 import { Link } from "react-router-dom";
 
 import formatDate from "../../../utils/formattedDate";
@@ -18,11 +20,11 @@ export default function RecentPostsItem({
             to={Path.DetailsRecipe(_id)}
             className="list-group-item list-group-item-action flex-column align-items-start"
         >
-            <div className="w-100 last-item justify-content-between">
+            <div className="posts-container w-100 last-item justify-content-between">
                 <img
                     src={imageUrl}
                     alt=""
-                    className="img-fluid float-left"
+                    className="recent-posts-img img-fluid float-left"
                 />
                 <h5 className="mb-1">
                     {title}

@@ -1,6 +1,6 @@
 import "./DetailsRecipe.css";
 
-import { useParams , Link, useNavigate} from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../contexts/authContext";
 import * as recipeService from "../../services/recipeService";
@@ -10,7 +10,7 @@ import useForm from "../../hooks/useForm";
 import AsideBar from "../asideBar/AsideBar";
 import YouMayAlsoLike from "./youMayAlsoLike/YouMayAlsoLike";
 import formatDate from "../../utils/formattedDate";
-import Path from'../paths'
+import Path from "../paths";
 
 export default function DetailsRecipe() {
     const { username, userId } = useContext(AuthContext);
@@ -38,13 +38,14 @@ export default function DetailsRecipe() {
     };
 
     const deleteButtonHandler = async () => {
-        const isConfirmed = confirm(`Are you sure you want to delete ${recipe.title}?`);
+        const isConfirmed = confirm(
+            `Are you sure you want to delete ${recipe.title}?`
+        );
         if (isConfirmed) {
             await recipeService.remove(recipeId);
             navigate(Path.MyRecipes);
         }
-    }
-
+    };
 
     const { values, onChange, onSubmit } = useForm(addCommentHandler, {
         comment: "",
@@ -56,15 +57,7 @@ export default function DetailsRecipe() {
         <>
             <section className="section lb">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-lg-10 offset-lg-1 img-container">
-                            <img
-                                src={recipe.imageUrl}
-                                alt=""
-                                className="recipe-img"
-                            />
-                        </div>
-                    </div>
+                    <img src={recipe.imageUrl} alt="" className="recipe-img" />
                 </div>
             </section>
             <section className="section">
@@ -125,17 +118,6 @@ export default function DetailsRecipe() {
                                             </li>
                                         </ul>
                                     </div>
-                                    {isOwner && (
-                                        <div className="buttons">
-                                            <Link
-                                                to={Path.EditRecipe(recipeId)}
-                                                className="btn btn-primary"
-                                            >
-                                                Edit
-                                            </Link>
-                                            <button className="btn btn-primary" onClick={deleteButtonHandler}>Delete</button>
-                                        </div>
-                                    )}
                                 </div>
 
                                 <div className="blog-content">
@@ -149,7 +131,24 @@ export default function DetailsRecipe() {
                                     </h3>
                                     <p>{recipe.instructions}</p>
                                 </div>
-
+                                <hr className="invis" />
+                                
+                                {isOwner && (
+                                    <div className="buttons">
+                                        <Link
+                                            to={Path.EditRecipe(recipeId)}
+                                            className="edit-btn btn btn-primary"
+                                        >
+                                            Edit
+                                        </Link>
+                                        <button
+                                            className="btn btn-primary"
+                                            onClick={deleteButtonHandler}
+                                        >
+                                            Delete
+                                        </button>
+                                    </div>
+                                )}
                                 <hr className="invis1" />
                                 <YouMayAlsoLike />
                                 <hr className="invis1" />
