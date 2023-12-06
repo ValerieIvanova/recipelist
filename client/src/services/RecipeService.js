@@ -22,12 +22,17 @@ export const getByOwnerId = async (ownerId) => {
     return result
 }
 
-export const getById = async (id) => {
-    const result = await request.get(`${baseURL}/${id}`);
+export const getById = async (recipeId) => {
+    const result = await request.get(`${baseURL}/${recipeId}`);
     return result;
 };
 
 export const getByPopularity = async () => {
     const result = await request.get(`${baseURL}?sortBy=popularity%20desc`);
+    return result
+}
+
+export const remove = async (recipeId) => {
+    const result = await request.remove(`${baseURL}/${recipeId}`);
     return result
 }

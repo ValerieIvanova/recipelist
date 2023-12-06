@@ -1,6 +1,6 @@
 import "./DetailsRecipe.css";
 
-import { useParams , Link} from "react-router-dom";
+import { useParams , Link, useNavigate} from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../contexts/authContext";
 import * as recipeService from "../../services/recipeService";
@@ -18,6 +18,7 @@ export default function DetailsRecipe() {
     const [comments, setComments] = useState([]);
     const { recipeId } = useParams();
     const createdOn = formatDate(recipe._createdOn);
+    const navigate = useNavigate();
 
     useEffect(() => {
         recipeService.getById(recipeId).then(setRecipe);
@@ -35,6 +36,15 @@ export default function DetailsRecipe() {
             { ...newComment, owner: { username } },
         ]);
     };
+
+    const deleteButtonHandler = async () => {
+        const isConfirmed = confirm(`Are you sure you want to delete ${recipe.title}?`);
+        if (isConfirmed) {
+            await recipeService.remove(recipeId);
+            navigate(Path.MyRecipes);
+        }
+    }
+
 
     const { values, onChange, onSubmit } = useForm(addCommentHandler, {
         comment: "",
@@ -123,12 +133,7 @@ export default function DetailsRecipe() {
                                             >
                                                 Edit
                                             </Link>
-                                            <Link
-                                                to={Path.DeleteRecipe}
-                                                className="btn btn-primary"
-                                            >
-                                                Delete
-                                            </Link>
+                                            <button className="btn btn-primary" onClick={deleteButtonHandler}>Delete</button>
                                         </div>
                                     )}
                                 </div>
