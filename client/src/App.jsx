@@ -14,6 +14,7 @@ import AllRecipes from "./components/allRecipes/AllRecipes";
 import GetStarted from "./components/getStarted/GetStarted";
 import MyRecipes from "./components/myRecipes/MyRecipes";
 import Logout from "./components/logout/Logout";
+import AuthGuard from "./components/guards/AuthGuard";
 
 function App() {
     return (
@@ -22,20 +23,20 @@ function App() {
                 <Header />
 
                 <Routes>
+                    <Route element={<AuthGuard />}>
+                        <Route path={Path.MyRecipes} element={<MyRecipes />} />
+                        <Route path={Path.CreateRecipe} element={<CreateRecipe />} />
+                        <Route path={Path.Logout} element={<Logout />} />
+                    </Route>
+
                     <Route path={Path.Home} element={<Home />} />
                     <Route path={Path.Recipes} element={<AllRecipes />} />
-                    <Route path={Path.MyRecipes} element={<MyRecipes />} />
-                    <Route
-                        path={Path.CreateRecipe}
-                        element={<CreateRecipe />}
-                    />
                     <Route
                         path={Path.DetailsRecipe(":recipeId")}
                         element={<DetailsRecipe />}
                     />
                     <Route path={Path.Contacts} element={<Contacts />} />
                     <Route path={Path.GetStarted} element={<GetStarted />} />
-                    <Route path={Path.Logout} element={<Logout />} />
                 </Routes>
 
                 <Footer />
