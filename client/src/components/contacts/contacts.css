@@ -10,3 +10,13 @@
 #wrapper > section > div > div > div > div > div:nth-child(3){
     justify-content: center;
 }
+
+.social {
+    text-align: center;
+}
+
+.fa {
+    padding: 20px;
+    font-weight: bold;
+    font-size: larger;
+}
