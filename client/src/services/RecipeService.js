@@ -4,7 +4,8 @@ const baseURL = "http://localhost:3030/data/recipes";
 
 
 export const getAll = async () => {
-    const result = await request.get(baseURL);
+    const result = await request.get(`${baseURL}?sortBy=_createdOn%20desc`);
+
     return result
 };
 
