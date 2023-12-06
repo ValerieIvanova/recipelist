@@ -5,7 +5,7 @@ import ratingDisplay from "../../../utils/ratingDisplay";
 import Path from "../../paths"
 
 export default function RecipeListItem({
-    owner,
+    _owner,
     title,
     description,
     category,
@@ -51,7 +51,7 @@ export default function RecipeListItem({
                     </small>
                     <small>
                         <a href="#" title="">
-                            by {owner}
+                            by {_owner}
                         </a>
                     </small>
                 </div>

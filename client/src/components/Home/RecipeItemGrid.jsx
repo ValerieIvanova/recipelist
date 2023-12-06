@@ -12,7 +12,7 @@ export default function RecipeItemGrid({
     popularity,
     imageUrl,
     _createdOn,
-    owner,
+    _owner,
 }) {
     const createdOnFormatted = formatDate(_createdOn);
     const rating = ratingDisplay(popularity);
@@ -42,7 +42,7 @@ export default function RecipeItemGrid({
                     </small>
                     <small>
                         <a href="#" title="">
-                            by {owner}
+                            by {_owner}
                         </a>
                     </small>
                 </div>

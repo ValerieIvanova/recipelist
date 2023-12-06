@@ -8,7 +8,7 @@ export default function RecentPostsItem({
     title,
     imageUrl,
     _createdOn,
-    owner
+    _owner
 }) {
 
     const createdOn = formatDate(_createdOn);
@@ -28,7 +28,7 @@ export default function RecentPostsItem({
                     {title}
                 </h5>
                 <small>{createdOn} </small>
-                <small>by {owner}</small>
+                <small>by {_owner}</small>
             </div>
         </Link>
     );
