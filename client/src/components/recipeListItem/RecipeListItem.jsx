@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import formatDate from '../../../utils/formattedDate';
-import ratingDisplay from "../../../utils/ratingDisplay";
+import formatDate from '../../utils/formattedDate';
+import ratingDisplay from "../../utils/ratingDisplay";
 
-import Path from "../../paths"
+import Path from "../paths"
 
 export default function RecipeListItem({
     _owner,
