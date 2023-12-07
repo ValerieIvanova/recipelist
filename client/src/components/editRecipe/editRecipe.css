@@ -1,4 +1,4 @@
-.add-recipe-container {
+.edit-recipe-container {
     text-align: center;
     background-image: url(https://wallpapers.com/images/hd/food-4k-1pf6px6ryqfjtnyr.jpg);
     background-size: cover;
@@ -9,7 +9,7 @@
     position: relative;
 }
 
-#wrapper > div.add-recipe-container::before {
+#wrapper > div.edit-recipe-container::before {
     content: "";
     position: absolute;
     top: 0;
@@ -20,12 +20,19 @@
     z-index: 0;
 } 
 
-#add-recipe > h1 {
+#edit-recipe > h1 {
     text-transform: uppercase;
     color: #fff;
+    margin-bottom: 0;
 }
 
-#add-recipe {
+#edit-recipe > img {
+    max-width: 90%;
+    border-radius: 1rem;
+    margin: 2rem 0;
+}
+
+#edit-recipe {
     position: relative;
     max-width: 60%;
     margin: auto;
@@ -35,7 +42,7 @@
     box-shadow: 1px 0px 16px 7px rgb(0 0 0 / 24%);
 }
 
-.add-recipe-container input{
+.edit-recipe-container input{
     text-align: center;
 }
 
@@ -44,8 +51,8 @@
     color: black;
 }
 
-#add-recipe input,
-#add-recipe textarea {
+#edit-recipe input,
+#edit-recipe textarea {
     width: 70%;
     background-color: rgba(255,255,255,.1);
     border-radius: 1rem;
@@ -56,11 +63,11 @@
     color: #fff;
 }
 
-#add-recipe textarea {
+#edit-recipe textarea {
     height: 6rem;
 }
 
-#add-recipe > input.submit-btn {
+#edit-recipe > input.submit-btn {
     margin: auto;
     max-width: 30%;
     background-color: #1161ee;

@@ -1,3 +1,5 @@
+import "./editRecipe.css";
+
 import { useNavigate, useParams } from "react-router-dom";
 
 import * as recipeService from "../../services/recipeService";
@@ -50,70 +52,71 @@ export default function EditRecipe() {
 
     return (
         <>
-            <form id="edit-recipe" onSubmit={editRecipeSubmitHandler}>
-                <div className="add-recipe-container">
-                    <h1>Add Recipe</h1>
-                    <label htmlFor="title">Title</label>
-                    <input
-                        type="text"
-                        id="title"
-                        name="title"
-                        placeholder="Recipe Title"
-                        value={recipe.title}
-                        onChange={onChange}
-                    />
+            <div className="edit-recipe-container">
+                <form id="edit-recipe" onSubmit={editRecipeSubmitHandler}>
+                        <h1>Edit Recipe</h1>
+                <img src={recipe.imageUrl} alt={recipe.title} /><br />
+                        <label htmlFor="title">Title</label><br />
+                        <input
+                            type="text"
+                            id="title"
+                            name="title"
+                            placeholder="Recipe Title"
+                            value={recipe.title}
+                            onChange={onChange}
+                        /><br />
 
-                    <label htmlFor="category">Category</label>
-                    <input
-                        type="text"
-                        id="category"
-                        name="category"
-                        placeholder="Category"
-                        value={recipe.category}
-                        onChange={onChange}
-                    />
+                        <label htmlFor="category">Category</label><br />
+                        <input
+                            type="text"
+                            id="category"
+                            name="category"
+                            placeholder="Category"
+                            value={recipe.category}
+                            onChange={onChange}
+                        /><br />
 
-                    <label htmlFor="description">Description</label>
-                    <textarea
-                        id="description"
-                        name="description"
-                        value={recipe.description}
-                        onChange={onChange}
-                    />
+                        <label htmlFor="description">Description</label><br />
+                        <textarea
+                            id="description"
+                            name="description"
+                            value={recipe.description}
+                            onChange={onChange}
+                        /><br />
 
-                    <label htmlFor="imageUrl">Image</label>
-                    <input
-                        type="text"
-                        id="imageUrl"
-                        name="imageUrl"
-                        placeholder="Recipe Image"
-                        value={recipe.imageUrl}
-                        onChange={onChange}
-                    />
+                        <label htmlFor="imageUrl">Image</label><br />
+                        <input
+                            type="text"
+                            id="imageUrl"
+                            name="imageUrl"
+                            placeholder="Recipe Image"
+                            value={recipe.imageUrl}
+                            onChange={onChange}
+                        /><br />
 
-                    <label htmlFor="ingredients">Ingredients</label>
-                    <textarea
-                        id="ingredients"
-                        name="ingredients"
-                        value={recipe.ingredients}
-                        onChange={onChange}
-                    />
+                        <label htmlFor="ingredients">Ingredients</label><br />
+                        <textarea
+                            id="ingredients"
+                            name="ingredients"
+                            value={recipe.ingredients}
+                            onChange={onChange}
+                        /><br />
 
-                    <label htmlFor="instructions">Instructions</label>
-                    <textarea
-                        id="instructions"
-                        name="instructions"
-                        value={recipe.instructions}
-                        onChange={onChange}
-                    />
+                        <label htmlFor="instructions">Instructions</label><br />
+                        <textarea
+                            id="instructions"
+                            name="instructions"
+                            value={recipe.instructions}
+                            onChange={onChange}
+                        /><br />
 
-                    <input
-                        className="submit-btn"
-                        type="submit"
-                        value="Edit Recipe"
-                    />
-                </div>
-            </form>
+                        <input
+                            className="edit-btn btn btn-primary submit-btn"
+                            type="submit"
+                            value="Edit Recipe"
+                        />
+                </form>
+            </div>
         </>
     );
 }

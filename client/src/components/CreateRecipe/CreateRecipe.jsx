@@ -8,7 +8,7 @@ import AuthContext from "../../contexts/authContext";
 
 export default function CreateRecipe() {
     const navigate = useNavigate();
-    const { username } = useContext(AuthContext)
+    const { username } = useContext(AuthContext);
     const addRecipeSubmitHandler = async (e) => {
         e.preventDefault();
         const recipeData = Object.fromEntries(new FormData(e.currentTarget));
@@ -22,49 +22,49 @@ export default function CreateRecipe() {
 
     return (
         <>
-            <form id="add-recipe" onSubmit={addRecipeSubmitHandler}>
-                <div className="add-recipe-container">
+            <div className="add-recipe-container">
+                <form id="add-recipe" onSubmit={addRecipeSubmitHandler}>
                     <h1>Add Recipe</h1>
-                    <label htmlFor="title">Title</label>
+                    <label htmlFor="title">Title</label><br/>
                     <input
                         type="text"
                         id="title"
                         name="title"
                         placeholder="Recipe Title"
-                    />
+                    /><br/>
 
-                    <label htmlFor="category">Category</label>
+                    <label htmlFor="category">Category</label><br/>
                     <input
                         type="text"
                         id="category"
                         name="category"
                         placeholder="Category"
-                    />
+                    /><br/>
 
-                    <label htmlFor="description">Description</label>
-                    <textarea id="description" name="description" />
+                    <label htmlFor="description">Description</label><br/>
+                    <textarea id="description" name="description" /><br/>
 
-                    <label htmlFor="imageUrl">Image</label>
+                    <label htmlFor="imageUrl">Image</label><br/>
                     <input
                         type="text"
                         id="imageUrl"
                         name="imageUrl"
                         placeholder="Recipe Image"
-                    />
+                    /><br/>
 
-                    <label htmlFor="ingredients">Ingredients</label>
-                    <textarea id="ingredients" name="ingredients" />
+                    <label htmlFor="ingredients">Ingredients</label><br/>
+                    <textarea id="ingredients" name="ingredients" /><br/>
 
-                    <label htmlFor="instructions">Instructions</label>
-                    <textarea id="instructions" name="instructions" />
+                    <label htmlFor="instructions">Instructions</label><br/>
+                    <textarea id="instructions" name="instructions" /><br/>
 
                     <input
-                        className="submit-btn"
+                        className="add-btn btn btn-primary submit-btn"
                         type="submit"
                         value="Add Recipe"
                     />
-                </div>
-            </form>
+                </form>
+            </div>
         </>
     );
 }
