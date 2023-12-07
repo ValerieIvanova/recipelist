@@ -125,14 +125,41 @@ export default function DetailsRecipe() {
                                     <h3>
                                         <strong>Ingredients:</strong>
                                     </h3>
-                                    <p>{recipe.ingredients}</p>
+                                    <div className="ingredients-list">
+                                        {recipe.ingredients &&
+                                            recipe.ingredients.map(
+                                                (ingredient, index) => (
+                                                    <p
+                                                        className="ingredient"
+                                                        key={index}
+                                                    >
+                                                        {ingredient}
+                                                    </p>
+                                                )
+                                            )}
+                                    </div>
                                     <h3>
                                         <strong>How it's made:</strong>
                                     </h3>
-                                    <p>{recipe.instructions}</p>
+                                    <div className="ingredients-list">
+                                        {recipe.instructions &&
+                                            recipe.instructions.map(
+                                                (step, index) => (
+                                                    <p
+                                                        className="step"
+                                                        key={index}
+                                                    >
+                                                        <strong>
+                                                            {index + 1}.
+                                                        </strong>
+                                                        {step}
+                                                    </p>
+                                                )
+                                            )}
+                                    </div>
                                 </div>
                                 <hr className="invis" />
-                                
+
                                 {isOwner && (
                                     <div className="buttons">
                                         <Link

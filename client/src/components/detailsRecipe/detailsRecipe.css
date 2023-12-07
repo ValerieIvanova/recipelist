@@ -13,3 +13,12 @@
     color: white;
     margin-right: 0.2rem;
 }
+
+#wrapper > section:nth-child(3) > div > div > div.col-lg-8.col-md-12.col-sm-12.col-xs-12 > div > div.blog-content > div {
+    margin-bottom: 2rem;
+}
+
+#wrapper > section:nth-child(3) > div > div > div.col-lg-8.col-md-12.col-sm-12.col-xs-12 > div > div.blog-content > div > p {
+    margin-bottom: 0;
+    line-height: 2rem;
+}

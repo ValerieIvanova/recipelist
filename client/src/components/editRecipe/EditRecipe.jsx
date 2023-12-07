@@ -50,71 +50,94 @@ export default function EditRecipe() {
         }));
     };
 
+    const onImageError = (e) => {
+        console.log("Image failed to load or doesn't exist:", e.target.src);
+        e.currentTarget.src = "../../../public/images/no-recipe-image.png";
+    }
+
     return (
         <>
             <div className="edit-recipe-container">
                 <form id="edit-recipe" onSubmit={editRecipeSubmitHandler}>
-                        <h1>Edit Recipe</h1>
-                <img src={recipe.imageUrl} alt={recipe.title} /><br />
-                        <label htmlFor="title">Title</label><br />
-                        <input
-                            type="text"
-                            id="title"
-                            name="title"
-                            placeholder="Recipe Title"
-                            value={recipe.title}
-                            onChange={onChange}
-                        /><br />
+                    <h1>Edit Recipe</h1>
+                    {(recipe.imageUrl && (
+                        <img src={recipe.imageUrl} alt={recipe.title} onError={onImageError}/>
+                    )) || <img src="../../../public/images/no-recipe-image.png" alt={recipe.title} />}
+                    <br />
+                    <label htmlFor="title">Title</label>
+                    <br />
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        placeholder="Recipe Title"
+                        value={recipe.title}
+                        onChange={onChange}
+                    />
+                    <br />
 
-                        <label htmlFor="category">Category</label><br />
-                        <input
-                            type="text"
-                            id="category"
-                            name="category"
-                            placeholder="Category"
-                            value={recipe.category}
-                            onChange={onChange}
-                        /><br />
+                    <label htmlFor="category">Category</label>
+                    <br />
+                    <input
+                        type="text"
+                        id="category"
+                        name="category"
+                        placeholder="Enter recipe category (e.g., Main Dish, Salad, ...)"
+                        value={recipe.category}
+                        onChange={onChange}
+                    />
+                    <br />
 
-                        <label htmlFor="description">Description</label><br />
-                        <textarea
-                            id="description"
-                            name="description"
-                            value={recipe.description}
-                            onChange={onChange}
-                        /><br />
+                    <label htmlFor="description">Description</label>
+                    <br />
+                    <textarea
+                        id="description"
+                        name="description"
+                        placeholder="Enter a brief description of the recipe (e.g., A flavorful dish with a blend of spices, ...)"
+                        value={recipe.description}
+                        onChange={onChange}
+                    />
+                    <br />
 
-                        <label htmlFor="imageUrl">Image</label><br />
-                        <input
-                            type="text"
-                            id="imageUrl"
-                            name="imageUrl"
-                            placeholder="Recipe Image"
-                            value={recipe.imageUrl}
-                            onChange={onChange}
-                        /><br />
+                    <label htmlFor="imageUrl">Image</label>
+                    <br />
+                    <input
+                        type="text"
+                        id="imageUrl"
+                        name="imageUrl"
+                        placeholder="Recipe Image"
+                        value={recipe.imageUrl}
+                        onChange={onChange}
+                    />
+                    <br />
 
-                        <label htmlFor="ingredients">Ingredients</label><br />
-                        <textarea
-                            id="ingredients"
-                            name="ingredients"
-                            value={recipe.ingredients}
-                            onChange={onChange}
-                        /><br />
+                    <label htmlFor="ingredients">Ingredients</label>
+                    <br />
+                    <textarea
+                        id="ingredients"
+                        name="ingredients"
+                        placeholder="Enter ingredients separated by commas (e.g., 1 cup flour, 2 eggs, ...)"
+                        value={recipe.ingredients}
+                        onChange={onChange}
+                    />
+                    <br />
 
-                        <label htmlFor="instructions">Instructions</label><br />
-                        <textarea
-                            id="instructions"
-                            name="instructions"
-                            value={recipe.instructions}
-                            onChange={onChange}
-                        /><br />
+                    <label htmlFor="instructions">Instructions</label>
+                    <br />
+                    <textarea
+                        id="instructions"
+                        name="instructions"
+                        placeholder="Enter instructions separated by commas (e.g., Mix flour and eggs, Preheat oven to 350°F, ...)"
+                        value={recipe.instructions}
+                        onChange={onChange}
+                    />
+                    <br />
 
-                        <input
-                            className="edit-btn btn btn-primary submit-btn"
-                            type="submit"
-                            value="Edit Recipe"
-                        />
+                    <input
+                        className="edit-btn btn btn-primary submit-btn"
+                        type="submit"
+                        value="Edit Recipe"
+                    />
                 </form>
             </div>
         </>
