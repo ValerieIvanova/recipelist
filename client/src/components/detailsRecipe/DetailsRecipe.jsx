@@ -4,38 +4,23 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../contexts/authContext";
 import * as recipeService from "../../services/recipeService";
-import * as commentService from "../../services/commentService";
-import useForm from "../../hooks/useForm";
 
 import AsideBar from "../asideBar/AsideBar";
 import YouMayAlsoLike from "./youMayAlsoLike/YouMayAlsoLike";
 import formatDate from "../../utils/formattedDate";
 import Path from "../paths";
+import Comments from "./comments/Comments";
 
 export default function DetailsRecipe() {
-    const { username, userId } = useContext(AuthContext);
-    const [recipe, setRecipe] = useState({});
-    const [comments, setComments] = useState([]);
+    const { userId } = useContext(AuthContext);
     const { recipeId } = useParams();
+    const [recipe, setRecipe] = useState({});
     const createdOn = formatDate(recipe._createdOn);
     const navigate = useNavigate();
 
     useEffect(() => {
         recipeService.getById(recipeId).then(setRecipe);
-        commentService.getAll(recipeId).then(setComments);
     }, [recipeId]);
-
-    const addCommentHandler = async (values) => {
-        const newComment = await commentService.create(
-            recipeId,
-            values.comment
-        );
-
-        setComments((state) => [
-            ...state,
-            { ...newComment, owner: { username } },
-        ]);
-    };
 
     const deleteButtonHandler = async () => {
         const isConfirmed = confirm(
@@ -46,10 +31,6 @@ export default function DetailsRecipe() {
             navigate(Path.MyRecipes);
         }
     };
-
-    const { values, onChange, onSubmit } = useForm(addCommentHandler, {
-        comment: "",
-    });
 
     const isOwner = userId === recipe._ownerId;
 
@@ -179,81 +160,8 @@ export default function DetailsRecipe() {
                                 <hr className="invis1" />
                                 <YouMayAlsoLike />
                                 <hr className="invis1" />
-                                <div className="custombox clearfix">
-                                    <h4 className="small-title">
-                                        {comments.length} Comments
-                                    </h4>
-                                    <div className="row">
-                                        <div className="col-lg-12">
-                                            <div className="comments-list">
-                                                {comments.map(
-                                                    ({
-                                                        _id,
-                                                        content,
-                                                        owner: { username },
-                                                    }) => (
-                                                        <div
-                                                            className="media"
-                                                            key={_id}
-                                                        >
-                                                            <a
-                                                                className="media-left"
-                                                                href="#"
-                                                            >
-                                                                <img
-                                                                    src="/upload/author.jpg"
-                                                                    alt=""
-                                                                    className="rounded-circle"
-                                                                />
-                                                            </a>
-                                                            <div className="media-body">
-                                                                <h4 className="media-heading user_name">
-                                                                    {username}{" "}
-                                                                    <small>
-                                                                        5 days
-                                                                        ago
-                                                                    </small>
-                                                                </h4>
-                                                                <p>{content}</p>
-                                                            </div>
-                                                        </div>
-                                                    )
-                                                )}
-                                            </div>
-                                            {comments.length === 0 && (
-                                                <p>No comments yet</p>
-                                            )}
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr className="invis1" />
-                                <div className="custombox clearfix">
-                                    <h4 className="small-title">
-                                        Leave a Reply
-                                    </h4>
-                                    <div className="row">
-                                        <div className="col-lg-12">
-                                            <form
-                                                className="form-wrapper"
-                                                onSubmit={onSubmit}
-                                            >
-                                                <textarea
-                                                    name="comment"
-                                                    className="form-control"
-                                                    placeholder="Your comment"
-                                                    value={values.comment}
-                                                    onChange={onChange}
-                                                />
-                                                <button
-                                                    type="submit"
-                                                    className="btn btn-primary"
-                                                >
-                                                    Submit Comment
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+
+                                <Comments />
                             </div>
                         </div>
                         <AsideBar />

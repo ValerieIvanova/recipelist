@@ -1528,8 +1528,9 @@
             "35e492b3-589a-4da7-a363-fc9e7047d193": {
                 email: "valery92@abv.bg",
                 username: "Valerie",
-                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
-            }
+                hashedPassword:
+                    "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
+            },
         },
         sessions: {},
     };
@@ -1727,7 +1728,8 @@
                 _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
                 title: "Caprese Salad",
                 category: "Salad",
-                imageUrl: "https://www.cubesnjuliennes.com/wp-content/uploads/2022/08/Caprese-Salad-Recipe.jpg",
+                imageUrl:
+                    "https://www.cubesnjuliennes.com/wp-content/uploads/2022/08/Caprese-Salad-Recipe.jpg",
                 description:
                     "A classic Italian salad showcasing the freshness of tomatoes, mozzarella, and basil with a drizzle of balsamic glaze.",
                 ingredients: [
@@ -1826,6 +1828,13 @@
                 recipeId: "a8c0ded0-09b5-4c49-ac80-48e374f65a98",
                 _createdOn: 1614260681375,
                 _id: "0a272c58-b7ea-4e09-a000-7ec988248f66",
+            },
+            "4c96fa94-2ba1-4d38-b7d3-9a0ea88e4989": {
+                _ownerId: "35e492b3-589a-4da7-a363-fc9e7047d193",
+                content: "Great recipe!!!!!!",
+                recipeId: "a8c0ded0-09b5-4c49-ac80-48e374f65a98",
+                _createdOn: 1701897416997,
+                _id: "4c96fa94-2ba1-4d38-b7d3-9a0ea88e4989",
             },
         },
         records: {
