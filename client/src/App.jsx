@@ -16,18 +16,26 @@ import GetStarted from "./components/getStarted/GetStarted";
 import MyRecipes from "./components/myRecipes/MyRecipes";
 import Logout from "./components/logout/Logout";
 import AuthGuard from "./components/guards/AuthGuard";
+import { ToastContainer } from "react-toastify";
 
 function App() {
     return (
         <AuthProvider>
             <div id="wrapper">
+                <ToastContainer />
                 <Header />
 
                 <Routes>
                     <Route element={<AuthGuard />}>
                         <Route path={Path.MyRecipes} element={<MyRecipes />} />
-                        <Route path={Path.CreateRecipe} element={<CreateRecipe />} />
-                        <Route path={Path.EditRecipe(":recipeId")} element={<EditRecipe />} />
+                        <Route
+                            path={Path.CreateRecipe}
+                            element={<CreateRecipe />}
+                        />
+                        <Route
+                            path={Path.EditRecipe(":recipeId")}
+                            element={<EditRecipe />}
+                        />
                         <Route path={Path.Logout} element={<Logout />} />
                     </Route>
 
