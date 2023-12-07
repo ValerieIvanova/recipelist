@@ -6,7 +6,7 @@ import * as recipeService from "../../services/recipeService";
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../contexts/authContext";
 import Path from "../paths";
-import { validateRecipeForm } from "../../utils/recipeFormValidation";
+import { validateRecipeForm } from "../../utils/formValidation";
 
 export default function EditRecipe() {
     const navigate = useNavigate();
@@ -54,7 +54,7 @@ export default function EditRecipe() {
             };
 
             await recipeService.edit(recipeId, updatedValues);
-            navigate(-1);
+            navigate(Path.DetailsRecipe(recipeId));
         } catch (error) {
             console.log(error);
         }

@@ -6,7 +6,7 @@ import * as recipeService from "../../services/recipeService";
 import { useContext, useState } from "react";
 import AuthContext from "../../contexts/authContext";
 import Path from "../paths";
-import { validateRecipeForm } from "../../utils/recipeFormValidation";
+import { validateRecipeForm } from "../../utils/formValidation";
 
 export default function CreateRecipe() {
     const navigate = useNavigate();

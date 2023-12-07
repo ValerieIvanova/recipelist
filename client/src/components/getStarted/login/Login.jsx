@@ -1,6 +1,7 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import useForm from "../../../hooks/useForm";
 import AuthContext from "../../../contexts/authContext";
+import { validateLoginForm } from "../../../utils/formValidation";
 
 const LoginFormKeys = {
     Email: "email",
@@ -8,12 +9,22 @@ const LoginFormKeys = {
 };
 
 export default function Login() {
-
+    const [formErrors, setFormErrors] = useState({});
     const { loginSubmitHandler } = useContext(AuthContext);
-    const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
-        [LoginFormKeys.Email]: "",
-        [LoginFormKeys.Password]: "",
-    });
+    
+    const { values, onChange, onSubmit } = useForm(
+        (values) => {
+            const errors = validateLoginForm(values)
+            setFormErrors(errors);
+            if (Object.keys(errors).length === 0) {
+                loginSubmitHandler(values);
+            }
+        },
+        {
+            [LoginFormKeys.Email]: "",
+            [LoginFormKeys.Password]: "",
+        }
+    );
 
     return (
         <div className="login">
@@ -32,6 +43,9 @@ export default function Login() {
                         value={values[LoginFormKeys.Email]}
                         autoComplete="on"
                     />
+                    {formErrors[LoginFormKeys.Email] && (
+                        <p className="error">{formErrors[LoginFormKeys.Email]}</p>
+                    )}
                 </div>
                 <div className="group">
                     <label htmlFor="pass" className="label">
@@ -46,6 +60,9 @@ export default function Login() {
                         onChange={onChange}
                         value={values[LoginFormKeys.Password]}
                     />
+                    {formErrors[LoginFormKeys.Password] && (
+                        <p className="error">{formErrors[LoginFormKeys.Password]}</p>
+                    )}
                 </div>
                 <div className="group">
                     <input type="submit" className="button" value="Sign In" />

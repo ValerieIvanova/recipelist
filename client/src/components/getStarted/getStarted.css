@@ -180,3 +180,8 @@ a{color:inherit;text-decoration:none}
 ::placeholder{
 color: #b3b3b3;
 } 
+
+#wrapper > div.row > div > div > div > div > div > div.login > form > div > p {
+	color: red;
+	font-weight: bold;
+}

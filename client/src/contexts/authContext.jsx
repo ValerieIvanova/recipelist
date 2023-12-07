@@ -10,18 +10,26 @@ const AuthContext = createContext();
 AuthContext.displayName = "AuthContext";
 
 export const AuthProvider = ({ children }) => {
-
     const navigate = useNavigate();
-    const [auth, setAuth] = usePersistedState('auth', {})
+    const [auth, setAuth] = usePersistedState("auth", {});
 
     const loginSubmitHandler = async (values) => {
-        const result = await authService.login(values.email, values.password);
-        setAuth(result);
-        localStorage.setItem("accessToken", result.accessToken);
-        navigate(-1);
+        try {
+            const result = await authService.login(
+                values.email,
+                values.password
+            );
+            setAuth(result);
+            localStorage.setItem("accessToken", result.accessToken);
+            navigate(-1);
+        } catch (error) {
+            alert(error.message);
+            console.log(error);
+        }
     };
 
     const registerSubmitHandler = async (values) => {
+       try{
         const result = await authService.register(
             values.email,
             values.username,
@@ -30,6 +38,9 @@ export const AuthProvider = ({ children }) => {
         setAuth(result);
         localStorage.setItem("accessToken", result.accessToken);
         navigate(Path.Home);
+       } catch (error) {
+           console.log(error);
+       }
     };
 
     const logoutHandler = () => {
@@ -49,9 +60,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={values}>
-            {children}
-        </AuthContext.Provider>
+        <AuthContext.Provider value={values}>{children}</AuthContext.Provider>
     );
 };
 
