@@ -29,18 +29,18 @@ export default function CreateRecipe() {
             ingredients,
             instructions,
         };
-        console.log(recipeData.ingredients);
 
-        const errors = validateRecipeForms(recipeData);
+        const errors = validateRecipeForm(recipeData);
         if (Object.keys(errors).length > 0) {
             setFormErrors(errors);
-        } else {
-            try {
-                await recipeService.create(recipeData, username);
-                navigate(Path.MyRecipes);
-            } catch (error) {
-                console.log(error);
-            }
+            return
+        }
+
+        try {
+            await recipeService.create(recipeData, username);
+            navigate(Path.MyRecipes);
+        } catch (error) {
+            console.log(error);
         }
     };
 
@@ -70,7 +70,7 @@ export default function CreateRecipe() {
                         name="category"
                         placeholder="Enter recipe category (e.g., Main Dish, Salad, ...)"
                     />
-                     {formErrors.category && (
+                    {formErrors.category && (
                         <p className="error">{formErrors.category}</p>
                     )}
                     <br />
@@ -82,7 +82,7 @@ export default function CreateRecipe() {
                         name="description"
                         placeholder="Enter a brief description of the recipe (e.g., A flavorful dish with a blend of spices, ...)"
                     />
-                     {formErrors.description && (
+                    {formErrors.description && (
                         <p className="error">{formErrors.description}</p>
                     )}
                     <br />

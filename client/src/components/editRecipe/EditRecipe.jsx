@@ -6,6 +6,7 @@ import * as recipeService from "../../services/recipeService";
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../contexts/authContext";
 import Path from "../paths";
+import { validateRecipeForm } from "../../utils/recipeFormValidation";
 
 export default function EditRecipe() {
     const navigate = useNavigate();
@@ -19,6 +20,8 @@ export default function EditRecipe() {
         ingredients: [],
         instructions: [],
     });
+    const [formErrors, setFormErrors] = useState({});
+
     useEffect(() => {
         recipeService.getById(recipeId).then((result) => {
             setRecipe(result);
@@ -27,17 +30,31 @@ export default function EditRecipe() {
 
     const editRecipeSubmitHandler = async (e) => {
         e.preventDefault();
-        const values = Object.fromEntries(new FormData(e.currentTarget));
+        const formData = new FormData(e.currentTarget);
+        const ingredients = formData.get("ingredients").split(",");
+        const instructions = formData.get("instructions").split(",");
 
+        const recipeData = {
+            ...Object.fromEntries(formData),
+            ingredients,
+            instructions,
+        };
+
+        const errors = validateRecipeForm(recipeData);
+        if (Object.keys(errors).length > 0) {
+            setFormErrors(errors);
+            return
+        }
+        
         try {
             const updatedValues = {
-                ...values,
+                ...recipeData,
                 _owner: username,
                 popularity: recipe.popularity,
             };
 
             await recipeService.edit(recipeId, updatedValues);
-            navigate(Path.MyRecipes);
+            navigate(-1);
         } catch (error) {
             console.log(error);
         }
@@ -74,6 +91,9 @@ export default function EditRecipe() {
                         value={recipe.title}
                         onChange={onChange}
                     />
+                    {formErrors.title && (
+                        <p className="error">{formErrors.title}</p>
+                    )}
                     <br />
 
                     <label htmlFor="category">Category</label>
@@ -86,6 +106,9 @@ export default function EditRecipe() {
                         value={recipe.category}
                         onChange={onChange}
                     />
+                    {formErrors.category && (
+                        <p className="error">{formErrors.category}</p>
+                    )}
                     <br />
 
                     <label htmlFor="description">Description</label>
@@ -97,6 +120,9 @@ export default function EditRecipe() {
                         value={recipe.description}
                         onChange={onChange}
                     />
+                    {formErrors.description && (
+                        <p className="error">{formErrors.description}</p>
+                    )}
                     <br />
 
                     <label htmlFor="imageUrl">Image</label>
@@ -120,6 +146,9 @@ export default function EditRecipe() {
                         value={recipe.ingredients}
                         onChange={onChange}
                     />
+                    {formErrors.ingredients && (
+                        <p className="error">{formErrors.ingredients}</p>
+                    )}
                     <br />
 
                     <label htmlFor="instructions">Instructions</label>
@@ -131,6 +160,9 @@ export default function EditRecipe() {
                         value={recipe.instructions}
                         onChange={onChange}
                     />
+                    {formErrors.instructions && (
+                        <p className="error">{formErrors.instructions}</p>
+                    )}
                     <br />
 
                     <input

@@ -1,4 +1,4 @@
-export const validateRecipeForms = (recipeData) => {
+export const validateRecipeForm = (recipeData) => {
     const errors = {};
 
     if (!recipeData.title) {
