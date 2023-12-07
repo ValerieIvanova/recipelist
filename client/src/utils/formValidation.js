@@ -35,3 +35,22 @@ export const validateLoginForm = (values) => {
 
     return errors;
 }
+
+export const validateRegisterForm = (values) => {
+    let errors = {};
+
+    if (!values.email) {
+        errors.email = "Email is required";
+    }
+    if (!values.username) {
+        errors.username = "Username is required";
+    }
+    if (!values.password) {
+        errors.password = "Password is required";
+    }
+    if (!values.repeatPassword) {
+        errors.repeatPassword = "Repeat password is required";
+    }
+
+    return errors;
+}

@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
 
 import AuthContext from "../../../contexts/authContext";
 import useForm from "../../../hooks/useForm";
+import { validateRegisterForm } from "../../../utils/formValidation";
 
 const RegisterFormKeys = {
     Email: "email",
@@ -11,14 +11,25 @@ const RegisterFormKeys = {
     RepeatPassword: "repeatPassword",
 };
 export default function Register() {
-    const navigate = useNavigate();
+    const [formErrors, setFormErrors] = useState({});
     const { registerSubmitHandler } = useContext(AuthContext);
-    const {values, onChange, onSubmit} = useForm(registerSubmitHandler, {
-        [RegisterFormKeys.Email]: "",
-        [RegisterFormKeys.Username]: "",
-        [RegisterFormKeys.Password]: "",
-        [RegisterFormKeys.RepeatPassword]: "",
-    });
+
+    const { values, onChange, onSubmit } = useForm(
+        (values) => {
+            const errors = validateRegisterForm(values);
+            console.log(errors);
+            setFormErrors(errors);
+            if (Object.keys(errors).length === 0) {
+                registerSubmitHandler(values);
+            }
+        },
+        {
+            [RegisterFormKeys.Email]: "",
+            [RegisterFormKeys.Username]: "",
+            [RegisterFormKeys.Password]: "",
+            [RegisterFormKeys.RepeatPassword]: "",
+        }
+    );
 
     return (
         <div className="sign-up-form">
@@ -37,6 +48,9 @@ export default function Register() {
                         values={values[RegisterFormKeys.Email]}
                         autoComplete="on"
                     />
+                    {formErrors[RegisterFormKeys.Email] && (
+                        <p className="error"> {formErrors[RegisterFormKeys.Email]}</p>
+                    )}
                 </div>
                 <div className="group">
                     <label htmlFor="username-create" className="label">
@@ -52,6 +66,9 @@ export default function Register() {
                         values={values[RegisterFormKeys.Username]}
                         autoComplete="on"
                     />
+                    {formErrors[RegisterFormKeys.Username] && (
+                        <p className="error"> {formErrors[RegisterFormKeys.Username]}</p>
+                    )}
                 </div>
                 <div className="group">
                     <label htmlFor="password" className="label">
@@ -67,6 +84,9 @@ export default function Register() {
                         onChange={onChange}
                         values={values[RegisterFormKeys.Password]}
                     />
+                    {formErrors[RegisterFormKeys.Password] && (
+                        <p className="error"> {formErrors[RegisterFormKeys.Password]}</p>
+                    )}
                 </div>
                 <div className="group">
                     <label htmlFor="repeat-password" className="label">
@@ -82,6 +102,9 @@ export default function Register() {
                         onChange={onChange}
                         values={values[RegisterFormKeys.RepeatPassword]}
                     />
+                    {formErrors[RegisterFormKeys.RepeatPassword] && (
+                        <p className="error"> {formErrors[RegisterFormKeys.RepeatPassword]}</p>
+                    )}
                 </div>
                 <div className="group">
                     <input type="submit" className="button" value="Sign Up" />

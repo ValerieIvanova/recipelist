@@ -185,3 +185,7 @@ color: #b3b3b3;
 	color: red;
 	font-weight: bold;
 }
+#wrapper > div.row > div > div > div > div > div > div.sign-up-form > form > div > p {
+	color: red;
+	font-weight: bold;
+}
