@@ -1,35 +1,56 @@
+import './comments.css'
 import { useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 import * as commentService from "../../../services/commentService";
 import useForm from "../../../hooks/useForm";
 import AuthContext from "../../../contexts/authContext";
+import { validateAddCommentForm } from "../../../utils/formValidation";
 
 export default function Comments() {
     const { username } = useContext(AuthContext);
     const [comments, setComments] = useState([]);
     const { recipeId } = useParams();
+    const [formErrors, setFormErrors] = useState({});
 
     useEffect(() => {
         commentService.getAll(recipeId).then(setComments);
     }, [recipeId]);
 
     const addCommentHandler = async (values) => {
-        const newComment = await commentService.create(
-            recipeId,
-            values.comment
-        );
-
-        setComments((state) => [
-            ...state,
-            { ...newComment, owner: { username } },
-        ]);
-        onChange({ target: { name: "comment", value: "" } });
+        try {
+            const newComment = await commentService.create(
+                recipeId,
+                values.comment
+            );
+            setComments((state) => [
+                ...state,
+                { ...newComment, owner: { username } },
+            ]);
+            onChange({ target: { name: "comment", value: "" } });
+        } catch (error) {
+            console.log(error);
+            if (error.message && error.code === 401) {
+                toast.error("You must be logged in to add a comment");
+            } else {
+                toast.error(error.message);
+            }
+        }
     };
 
-    const { values, onChange, onSubmit } = useForm(addCommentHandler, {
-        comment: "",
-    });
+    const { values, onChange, onSubmit } = useForm(
+        (values) => {
+            const errors = validateAddCommentForm(values);
+            setFormErrors(errors);
+            if (Object.keys(errors).length === 0) {
+                addCommentHandler(values);
+            }
+        },
+        {
+            comment: "",
+        }
+    );
 
     return (
         <>
@@ -53,25 +74,26 @@ export default function Comments() {
                                         timeDiff / (1000 * 3600 * 24)
                                     );
                                     return (
-                                    <div className="media" key={_id}>
-                                        <a className="media-left" href="#">
-                                            <img
-                                                src="/upload/author.jpg"
-                                                alt=""
-                                                className="rounded-circle"
-                                            />
-                                        </a>
-                                        <div className="media-body">
-                                            <h4 className="media-heading user_name">
-                                                {username}
-                                                <small>
-                                                    {daysAgo}
-                                                    days ago
-                                                </small>
-                                            </h4>
-                                            <p>{content}</p>
+                                        <div className="media" key={_id}>
+                                            <a className="media-left" href="#">
+                                                <img
+                                                    src="/upload/author.jpg"
+                                                    alt=""
+                                                    className="rounded-circle"
+                                                />
+                                            </a>
+                                            <div className="media-body">
+                                                <h4 className="media-heading user_name">
+                                                    {username}
+                                                    <small>
+                                                        {daysAgo}
+                                                        days ago
+                                                    </small>
+                                                </h4>
+                                                <p>{content}</p>
+                                            </div>
                                         </div>
-                                    </div>)
+                                    );
                                 }
                             )}
                         </div>
@@ -92,6 +114,9 @@ export default function Comments() {
                                 value={values.comment}
                                 onChange={onChange}
                             />
+                            {formErrors.comment && (
+                                <p className="error">{formErrors.comment}</p>
+                            )}
                             <button type="submit" className="btn btn-primary">
                                 Submit Comment
                             </button>

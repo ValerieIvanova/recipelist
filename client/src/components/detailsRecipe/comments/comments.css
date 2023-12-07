@@ -1,0 +1,4 @@
+#wrapper > section:nth-child(4) > div > div > div.col-lg-8.col-md-12.col-sm-12.col-xs-12 > div > div:nth-child(9) > div > div > form > p {
+    color: red;
+    font-weight: bold;
+}

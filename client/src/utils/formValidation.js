@@ -54,3 +54,13 @@ export const validateRegisterForm = (values) => {
 
     return errors;
 }
+
+export const validateAddCommentForm = (values) => {
+    let errors = {};
+
+    if (!values.comment.trim()) {
+        errors.comment = "Can't be empty";
+    }
+
+    return errors;
+}
