@@ -66,3 +66,8 @@
     background-color: #1161ee;
     margin-top: 1rem;
 }
+
+#add-recipe > p{
+    color: red;
+    font-weight: bold;
+}
