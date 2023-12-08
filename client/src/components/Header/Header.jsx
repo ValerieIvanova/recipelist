@@ -50,14 +50,6 @@ export default function Header() {
                                         Recipes
                                     </Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link
-                                        className="nav-link"
-                                        to={Path.Contacts}
-                                    >
-                                        Contacts
-                                    </Link>
-                                </li>
                                 
                                 {isAuthenticated && (
                                     <>
@@ -78,11 +70,6 @@ export default function Header() {
                                             </Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link" to="#">
-                                                Profile
-                                            </Link>
-                                        </li>
-                                        <li className="nav-item">
                                             <Link
                                                 className="nav-link"
                                                 to={Path.Logout}
@@ -92,6 +79,14 @@ export default function Header() {
                                         </li>
                                     </>
                                 )}
+                                <li className="nav-item">
+                                    <Link
+                                        className="nav-link"
+                                        to={Path.Contacts}
+                                    >
+                                        Contacts
+                                    </Link>
+                                </li>
                                 {!isAuthenticated &&
                                     location.pathname !== "/" && (
                                         <Link
