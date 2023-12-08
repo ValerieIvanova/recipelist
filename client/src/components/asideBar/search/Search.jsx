@@ -1,7 +1,6 @@
 import { useState } from "react";
-
-import * as recipeService from "../../../services/recipeService";
 import { useNavigate } from "react-router-dom";
+
 import Path from "../../paths";
 
 export default function Search() {
