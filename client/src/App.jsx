@@ -3,8 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./contexts/authContext";
 import Path from "./components/paths";
 
-import Header from "./components/Header/Header";
-import Home from "./components/Home/Home";
+import Header from "./components/header/Header";
+import Home from "./components/home/Home";
 import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import Contacts from "./components/contacts/Contacts";

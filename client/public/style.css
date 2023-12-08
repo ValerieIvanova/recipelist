@@ -2,9 +2,7 @@
     Table of Content
     
     1. BASIC
-    2. HEADER
     3. SECTION
-    4. FOOTER
     5. PAGES
     6. BLOG
     7. WIDGETS
@@ -301,73 +299,6 @@ a {
     font-size: 12px;
     padding: 0.1rem 1rem;
 }
-
-
-/* FOOTER
-**************************************/
-
-/* 
-.footer.wb {
-    background-color: #ffffff;
-}
-
-.demos h4 a {
-    color: #000000 !important;
-    font-size: 21px;
-}
-
-.demos .btn {
-    padding: 0.6rem 1.5rem;
-}
-
-.demos p {
-    padding: 0 0 1.5rem;
-    margin: 0;
-}
-
-.section.demos {
-    background-color: #ffffff;
-}
-
-.demos .col-lg-10 .row {
-    padding: 2.5rem 1.5rem !important;
-    background-color: #ffffff;
-    border: 1px dashed #e2e2e2;
-}
-
-.demos .invis1 {
-    margin: 2rem 0;
-}
-
-.footer ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.footer ul li {
-    margin-bottom: 0.3rem;
-}
-
-.footer ul li:last-child {
-    margin-bottom: 0;
-}
-
-.footer .fa-star {
-    font-size: 12px;
-}
-
-.footer h5,
-.footer ul li a {
-    color: #111111;
-}
-
-.demos .blog-meta h4 {
-    font-size: 28px;
-    padding: 0 0 1rem;
-} */
-
-
 
 
 /* PAGES 
@@ -746,19 +677,9 @@ a {
     color: #111111;
 }
 
-.page-wrapper .banner-spot {
+.page-wrapper {
     padding: 0.4rem;
     background-image: none;
-}
-
-.banner-spot {
-    background: #edeff2 url("/images/ads-bg.png") no-repeat scroll center right / auto 100%;
-    clear: both;
-    display: block;
-    height: auto;
-    margin: 0 auto;
-    padding: 15px;
-    position: relative;
 }
 
 .banner-img img {
@@ -1000,7 +921,7 @@ hr.invis3 {
     margin-bottom: 3rem;
 }
 
-.sidebar .banner-spot {
+.sidebar {
     background-image: none;
     padding: 5px;
 }
