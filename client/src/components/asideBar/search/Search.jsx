@@ -29,12 +29,6 @@ export default function Search() {
                         placeholder="Search on the site"
                         onChange={onChange}
                     />
-                    <button
-                        className="btn btn-primary"
-                        type="submit"
-                    >
-                        Search
-                    </button>
                 </form>
             </div>
         </>
