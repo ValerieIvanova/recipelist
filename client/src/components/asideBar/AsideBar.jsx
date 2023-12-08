@@ -30,7 +30,7 @@ export default function AsideBar() {
                 setCategoriesLength(categoriesLength);
             })
             .catch((error) => console.log(error));
-    });
+    }, []);
 
     return (
         <div className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
