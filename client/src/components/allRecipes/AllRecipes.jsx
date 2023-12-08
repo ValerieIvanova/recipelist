@@ -1,3 +1,5 @@
+import "./allRecipes.css"
+
 import AsideBar from "../asideBar/AsideBar";
 import RecipeListItem from "../recipeListItem/RecipeListItem";
 

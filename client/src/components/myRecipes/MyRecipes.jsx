@@ -1,3 +1,5 @@
+import "./myRecipes.css"
+
 import { useContext, useEffect, useState } from "react";
 
 import * as recipeService from "../../services/recipeService";

@@ -2,3 +2,35 @@
     color: red;
     font-weight: bold;
 }
+
+
+.user_name {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.comments-list p {
+    margin-bottom: 1rem
+}
+
+.tag-cloud-single a,
+.comments-list .media-right,
+.comments-list small {
+    color: #999 !important;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-top: 5px;
+    padding-left: 10px;
+    text-transform: uppercase;
+}
+
+.comments-list .media {
+    padding: 1rem;
+    margin-bottom: 15px;
+}
+
+.comments-list img {
+    max-width: 80px;
+    margin-right: 30px;
+}
+

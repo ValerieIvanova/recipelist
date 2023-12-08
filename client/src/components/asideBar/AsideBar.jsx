@@ -1,3 +1,5 @@
+import "./asideBar.css";
+
 import { useState, useEffect } from "react";
 
 import * as recipeService from "../../services/recipeService";
