@@ -14,22 +14,27 @@ User-specific functionality such as saved recipes and profile management.
 Edit or delete existing recipes.
 Sort recipes based on various criteria.
 ## Components
-1. Header Component
-2. Navigation bar with links to different sections of the app.
-Conditional rendering based on user authentication status.
-3. Footer Component
+
+### Header Component
+Navigation bar with links to different sections of the app. Conditional rendering based on user authentication status.
+
+### Footer Component
 Displays branding information and social media links.
-4. Login Component
-Allows users to log in using their credentials.
-Form validation for email and password inputs.
-5. Register Component
+
+### Login Component
+Allows users to log in using their credentials. Form validation for email and password inputs.
+
+### Register Component
 User registration with form validation for email, username, and password.
-6. AllRecipes Component
-Displays a list of all available recipes.
-7. Pagination for easy navigation through multiple recipe pages.
-8. DetailsRecipe Component
+
+### AllRecipes Component
+Displays a list of all available recipes. Pagination for easy navigation through multiple recipe pages.
+
+### RecipeListItem Component
 Renders individual recipe details within the recipe list.
+
 ... and more
+
 ## Live Demo
 
 RecipeList is deployed using Firebase Hosting, ensuring seamless access to the application.
