@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import * as recipeService from "../../services/recipeService";
 
 import RecentPostsItem from "./recentPostsItem.jsx/RecentPostsItem";
+import Search from "./search/Search";
 
 export default function AsideBar() {
     const [recipes, setRecipes] = useState([]);
@@ -23,7 +24,9 @@ export default function AsideBar() {
                 const categoriesLength = uniqueCategories.map((category) => {
                     return {
                         categoryName: category,
-                        count: result.filter((recipe) => recipe.category === category).length,
+                        count: result.filter(
+                            (recipe) => recipe.category === category
+                        ).length,
                     };
                 });
 
@@ -35,17 +38,7 @@ export default function AsideBar() {
     return (
         <div className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
             <div className="sidebar">
-                <div className="widget">
-                    <h2 className="widget-title">Search</h2>
-                    <form className="search-form">
-                        <input
-                            id="search"
-                            type="text"
-                            className="form-control"
-                            placeholder="Search on the site"
-                        />
-                    </form>
-                </div>
+                <Search />
 
                 <div className="widget">
                     <h2 className="widget-title">Recent Posts</h2>
@@ -64,8 +57,9 @@ export default function AsideBar() {
                         <ul>
                             {categoriesLength.map(({ categoryName, count }) => (
                                 <li key={categoryName}>
-                                    <a href="">{categoryName} 
-                                    <span>{count}</span>
+                                    <a href="">
+                                        {categoryName}
+                                        <span>{count}</span>
                                     </a>
                                 </li>
                             ))}

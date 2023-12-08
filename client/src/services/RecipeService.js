@@ -47,3 +47,11 @@ export const edit = async (recipeId, values) => {
     const result = await request.put(`${baseURL}/${recipeId}`, values);
     return result
 }
+
+export const searchRecipes = async (searchQuery) => {
+    const encodedSearchQuery = encodeURIComponent(`"${searchQuery}"`);
+    const result = await request.get(
+        `${baseURL}?where=title%20LIKE%20${encodedSearchQuery}`
+    );
+    return result;
+};

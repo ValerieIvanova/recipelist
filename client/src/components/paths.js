@@ -8,6 +8,7 @@ const Path = {
     GetStarted: '/get-started',
     MyRecipes: '/my-recipes',
     Logout: '/logout',
+    Search: (searchQuery) => `/recipes/search/${searchQuery}`,
 }
 
 export default Path

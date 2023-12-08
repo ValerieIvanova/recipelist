@@ -18,6 +18,7 @@ import GetStarted from "./components/getStarted/GetStarted";
 import MyRecipes from "./components/myRecipes/MyRecipes";
 import Logout from "./components/logout/Logout";
 import AuthGuard from "./components/guards/AuthGuard";
+import FoundRecipes from "./components/asideBar/search/foundRecipes";
 
 function App() {
     return (
@@ -46,6 +47,7 @@ function App() {
                         path={Path.DetailsRecipe(":recipeId")}
                         element={<DetailsRecipe />}
                     />
+                    <Route path={Path.Search(":searchQuery")} element={<FoundRecipes />} />
                     <Route path={Path.Contacts} element={<Contacts />} />
                     <Route path={Path.GetStarted} element={<GetStarted />} />
                 </Routes>
