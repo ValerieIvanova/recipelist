@@ -84,6 +84,8 @@ React
 React Router
 Vitest
 
+## The server used in the project is [Softuni practice server](https://github.com/softuni-practice-server/softuni-practice-server)
+
 ### Contributing
 Contributions are welcome! Please follow the guidelines in CONTRIBUTING.md.
 ### License
