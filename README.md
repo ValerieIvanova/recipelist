@@ -30,7 +30,7 @@ Pagination for easy navigation through multiple recipe pages.
 RecipeListItem Component
 Renders individual recipe details within the recipe list.
 ... and more
-## Deployment
+## Live Demo
 
 RecipeList is deployed using Firebase Hosting, ensuring seamless access to the application.
 1. Download the server folder.
