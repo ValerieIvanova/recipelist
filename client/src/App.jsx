@@ -1,5 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
+import { ToastContainer } from "react-toastify";
+
 import { AuthProvider } from "./contexts/authContext";
 import Path from "./components/paths";
 
@@ -16,7 +18,6 @@ import GetStarted from "./components/getStarted/GetStarted";
 import MyRecipes from "./components/myRecipes/MyRecipes";
 import Logout from "./components/logout/Logout";
 import AuthGuard from "./components/guards/AuthGuard";
-import { ToastContainer } from "react-toastify";
 
 function App() {
     return (

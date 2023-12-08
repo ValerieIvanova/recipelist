@@ -1,3 +1,5 @@
+import "./recipeListItem.css"
+
 import { Link } from "react-router-dom";
 import formatDate from '../../utils/formattedDate';
 import ratingDisplay from "../../utils/ratingDisplay";
