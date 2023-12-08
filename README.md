@@ -34,8 +34,8 @@ Renders individual recipe details within the recipe list.
 
 RecipeList is deployed using Firebase Hosting, ensuring seamless access to the application.
 1. Download the server folder.
-2. Open a terminal, navigato to the folder $cd server
-3. start the server with $node server.js
+2. Open a terminal, navigato to the folder `cd server`
+3. start the server with `node server.js`
 4. And now you can [Visit RecipeList](https://recipelist-a40ae.web.app/)
    
 ## Installation
