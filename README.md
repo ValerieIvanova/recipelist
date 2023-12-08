@@ -14,20 +14,20 @@ User-specific functionality such as saved recipes and profile management.
 Edit or delete existing recipes.
 Sort recipes based on various criteria.
 ## Components
-Header Component
-Navigation bar with links to different sections of the app.
+1. Header Component
+2. Navigation bar with links to different sections of the app.
 Conditional rendering based on user authentication status.
-Footer Component
+3. Footer Component
 Displays branding information and social media links.
-Login Component
+4. Login Component
 Allows users to log in using their credentials.
 Form validation for email and password inputs.
-Register Component
+5. Register Component
 User registration with form validation for email, username, and password.
-AllRecipes Component
+6. AllRecipes Component
 Displays a list of all available recipes.
-Pagination for easy navigation through multiple recipe pages.
-RecipeListItem Component
+7. Pagination for easy navigation through multiple recipe pages.
+8. DetailsRecipe Component
 Renders individual recipe details within the recipe list.
 ... and more
 ## Live Demo
