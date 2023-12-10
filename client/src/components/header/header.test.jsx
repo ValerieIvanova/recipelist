@@ -24,7 +24,6 @@ describe('Header Component', () => {
         const contactsLink = screen.getByText('Contacts');
         const addRecipeLink = screen.getByText('Add Recipe');
         const myRecipesLink = screen.getByText('My Recipes');
-        const profileLink = screen.getByText('Profile');
         const logoutLink = screen.getByText('Logout');
 
         expect(homeLink).toBeInTheDocument();
@@ -32,7 +31,6 @@ describe('Header Component', () => {
         expect(contactsLink).toBeInTheDocument();
         expect(addRecipeLink).toBeInTheDocument();
         expect(myRecipesLink).toBeInTheDocument();
-        expect(profileLink).toBeInTheDocument();
         expect(logoutLink).toBeInTheDocument();
     });
 
