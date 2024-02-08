@@ -1,6 +1,12 @@
 # RecipeList Single Page Application
+## Live Demo
+
+RecipeList is deployed using Firebase Hosting, ensuring seamless access to the application.
+[Visit RecipeList](https://recipelist-a40ae.firebaseapp.com/)
+
 ## Overview
 RecipeList is a Single Page Application (SPA) designed to help users explore, create, and manage recipes in an intuitive and user-friendly manner.
+
 ## Features
 1. Browse Recipes
 View a comprehensive list of recipes, sorted by popularity or date.
@@ -13,6 +19,7 @@ User-specific functionality such as saved recipes and profile management.
 4. Recipe Management
 Edit or delete existing recipes.
 Sort recipes based on various criteria.
+
 ## Components
 
 ### Header Component
@@ -34,14 +41,6 @@ Displays a list of all available recipes. Pagination for easy navigation through
 Renders individual recipe details within the recipe list.
 
 ... and more
-
-## Live Demo
-
-RecipeList is deployed using Firebase Hosting, ensuring seamless access to the application.
-1. Download the server folder.
-2. Open a terminal, navigato to the folder `cd server`
-3. start the server with `node server.js`
-4. And now you can [Visit RecipeList](https://recipelist-a40ae.web.app/)
    
 ## Installation
 Clone this repository.
