@@ -1,7 +1,8 @@
 import * as request from "../lib/request";
 
-const baseURL = "http://localhost:3030/data/recipes";
+// const baseURL = "http://localhost:3030/data/recipes";
 
+const baseURL = `${import.meta.env.VITE_API_URL}/data/recipes`;
 
 export const getAll = async () => {
     const result = await request.get(`${baseURL}?sortBy=_createdOn%20desc`);

@@ -21,6 +21,7 @@ import AuthGuard from "./components/guards/AuthGuard";
 import FoundRecipes from "./components/asideBar/search/foundRecipes";
 
 function App() {
+
     return (
         <AuthProvider>
             <div id="wrapper">
